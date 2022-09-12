@@ -20,6 +20,12 @@
   margin: 0 auto;
   padding: 0 15px;
 }
+.text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  line-height: 1.5 !important;
+}
 .text-animation {
   margin: 20px 0;
 }
