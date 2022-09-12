@@ -1,11 +1,12 @@
+import { Heading } from "components/text";
 import Image from "next/image";
 
 const HomeAboutMe = () => {
   return (
     <section className="layout-container">
-      <div className="flex flex-col-reverse items-center justify-between gap-8 py-10 lg:flex-row lg:py-28">
+      <div className="flex flex-col-reverse items-center justify-between gap-8 py-10 lg:flex-row lg:py-20">
         <div className="w-full max-w-[700px]">
-          <h2 className="text-3xl font-semibold">ABOUT ME</h2>
+          <Heading>About Me</Heading>
           <p className="max-w-[650px] my-6 leading-[34px] text-lg">
             Good day, everyone! I&apos;m Nguyen Hoang Lam, I&apos;m 19 years old and I&apos;m from
             Ho Chi Minh city. I&apos;m Fresher Front-end Developer. I&apos;m often praised for my
@@ -18,13 +19,12 @@ const HomeAboutMe = () => {
             <button className="py-3 rounded-lg bg-green82 px-7 bg-linearPurple">Contact Me</button>
           </div>
         </div>
-
         <div className="flex justify-center flex-1">
           <Image
             alt="avatar"
-            width={224}
-            height={270}
-            src="/avatar.png"
+            width={350}
+            height={350}
+            src="/avatar-me-350-2.png"
             className="rounded-lg aspect-square"
           />
         </div>

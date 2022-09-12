@@ -1,5 +1,5 @@
 import { LayoutHome } from "layouts";
-import { HomeAboutMe, HomeIntro } from "modules/home";
+import { HomeAboutMe, HomeFeature, HomeIntro, HomeMySkills, HomeVSExtensions } from "modules/home";
 import type { NextPage } from "next";
 
 const HomePage: NextPage = () => {
@@ -7,6 +7,9 @@ const HomePage: NextPage = () => {
     <LayoutHome>
       <HomeIntro />
       <HomeAboutMe />
+      <HomeMySkills />
+      <HomeFeature />
+      <HomeVSExtensions />
     </LayoutHome>
   );
 };
