@@ -8,12 +8,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        purplea5: "#a55eea",
+        green1d: "#1dc071",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
-      backgroudImage: {
+      backgroundImage: {
         linearGreen: "linear-gradient(to right bottom, rgb(29, 192, 113), rgb(164, 217, 108))",
       },
     },

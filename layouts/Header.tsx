@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="shadow-sm">
+    <header>
       <div className="layout-container">
-        <nav className="py-8">
-          <ul className="flex items-center gap-10 text-sm">
-            <li className="relative after:absolute after:-bottom-1 px-1 after:right-0 after:left-0 after:w-full after:h-[2px] after:bg-purplea5">
+        <nav className="py-5">
+          <ul className="flex items-center gap-10 font-medium">
+            <li>
               <Link href="/">Home</Link>
             </li>
             <li>
