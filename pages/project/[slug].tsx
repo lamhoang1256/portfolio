@@ -1,4 +1,5 @@
 import { Heading } from "components/text";
+import { YouTube } from "components/youtube";
 import { LayoutHome } from "layouts";
 import { ProjectContent, ProjectImageSlider } from "modules/project";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -20,6 +21,7 @@ const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => 
       <div className="layout-container">
         <section className="max-w-[900px] mt-4 mx-auto">
           <Heading>{project.title}</Heading>
+          <YouTube url={project.videoDemo} className="my-6" />
           <ProjectImageSlider images={project.images} className="my-6" />
           <ProjectContent mdxSource={mdxSource} />
         </section>
