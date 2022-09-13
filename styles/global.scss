@@ -86,3 +86,12 @@
     stroke-dashoffset: -400;
   }
 }
+.project-content {
+  ul {
+    list-style: disc;
+  }
+  summary {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+}
