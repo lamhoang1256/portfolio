@@ -4,7 +4,7 @@ interface ProjectItemProps {}
 
 const ProjectItem = ({}: ProjectItemProps) => {
   return (
-    <div className="pb-5 rounded-xl bg-slate-800">
+    <div className="rounded-xl bg-linearPurple2">
       <div className="overflow-hidden rounded-xl">
         <Image
           src="/easy-home.png"

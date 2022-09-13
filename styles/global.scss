@@ -11,7 +11,7 @@
 }
 @layer base {
   body {
-    @apply font-montserrat bg-slate-900 text-white;
+    @apply font-montserrat bg-[#0d0321] text-white;
   }
 }
 .layout-container {
@@ -25,6 +25,9 @@
   background-clip: text;
   color: transparent !important;
   line-height: 1.5 !important;
+}
+.text-desc {
+  @apply opacity-[0.72];
 }
 .text-animation {
   margin: 20px 0;

@@ -10,7 +10,7 @@ const HomeVSExtensions = () => {
         <p className="mt-3">I am sure you will like my vscode extensions</p>
       </div>
       <div className="grid gap-6 mt-10 lg:grid-cols-2">
-        <div className="flex items-center gap-4 p-4 rounded-md bg-slate-800">
+        <div className="flex items-center gap-4 p-4 rounded-md bg-linearPurple2">
           <div className="flex-shrink-0">
             <Image
               src="/beautiful-dracula.png"
