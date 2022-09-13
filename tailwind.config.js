@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         purple9c: "#9C7EFB",
         green1d: "#1dc071",
+        blue57: "#5773ff",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
