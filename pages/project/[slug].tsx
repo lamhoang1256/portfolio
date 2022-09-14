@@ -3,6 +3,7 @@ import { LayoutHome } from "layouts";
 import { ProjectContent, ProjectImageSlider } from "modules/project";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import { useRouter } from "next/router";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
@@ -15,6 +16,10 @@ interface ProjectDetailsPageProps {
 }
 
 const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <span>Loading</span>;
+  }
   return (
     <LayoutHome>
       <div className="layout-container">
@@ -27,16 +32,6 @@ const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => 
     </LayoutHome>
   );
 };
-
-export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(
-    `*[_type == "project" && defined(slug.current)][].slug.current`
-  );
-  return {
-    paths: paths.map((slug: string) => ({ params: { slug } })),
-    fallback: true,
-  };
-}
 
 export async function getStaticProps(context: any) {
   const { slug = "" } = context.params;
@@ -66,6 +61,17 @@ export async function getStaticProps(context: any) {
       project,
       mdxSource,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const paths = await sanityClient.fetch(
+    `*[_type == "project" && defined(slug.current)][].slug.current`
+  );
+  console.log("paths: ", paths);
+  return {
+    paths: paths.map((slug: string) => ({ params: { slug } })),
+    fallback: true,
   };
 }
 
