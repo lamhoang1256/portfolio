@@ -5,8 +5,9 @@ import category from "./category";
 import post from "./post";
 import author from "./author";
 import project from "./project";
+import skill from "./skill";
 
 export default createSchema({
   name: "default",
-  types: schemaTypes.concat([post, author, category, project, blockContent]),
+  types: schemaTypes.concat([post, author, category, project, skill, blockContent]),
 });

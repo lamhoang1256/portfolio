@@ -24,7 +24,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
       </Link>
       <div className="p-4 pt-3">
         <Link href={`/project/${slug.current}`}>
-          <h3 className="text-lg font-bold uppercase cursor-pointer text-green82">{title}</h3>
+          <h3 className="text-lg font-bold cursor-pointer text-green82">{title}</h3>
         </Link>
         <p>{description}</p>
       </div>

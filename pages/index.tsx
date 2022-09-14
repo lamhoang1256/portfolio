@@ -7,21 +7,22 @@ import {
   HomeMySkills,
   HomeVSExtensions,
 } from "modules/home";
+import { ISkill } from "types";
 import { IProject } from "types/project";
 import sanityClient from "utils/sanityClient";
 
 interface HomePageProps {
   projects: IProject[];
+  skills: ISkill[];
 }
 
-const HomePage = ({ projects }: HomePageProps) => {
-  console.log("projects: ", projects);
+const HomePage = ({ projects, skills }: HomePageProps) => {
   return (
     <LayoutHome>
       <HomeCanvas />
       <HomeIntro />
       <HomeAboutMe />
-      <HomeMySkills />
+      <HomeMySkills skills={skills} />
       <HomeFeature projects={projects} />
       <HomeVSExtensions />
     </LayoutHome>
@@ -30,9 +31,11 @@ const HomePage = ({ projects }: HomePageProps) => {
 
 export async function getStaticProps() {
   const projects = await sanityClient.fetch(`*[_type == "project"]`);
+  const skills = await sanityClient.fetch(`*[_type == "skill"]`);
   return {
     props: {
       projects,
+      skills,
     },
   };
 }
