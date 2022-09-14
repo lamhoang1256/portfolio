@@ -1,8 +1,8 @@
-interface TextStrokeAnimationProps {
+interface TextAnimationProps {
   children: React.ReactNode;
 }
 
-const TextStrokeAnimation = ({ children }: TextStrokeAnimationProps) => {
+const TextAnimation = ({ children }: TextAnimationProps) => {
   return (
     <svg viewBox="0 0 900 100" className="text-animation">
       <symbol id="text-animation-symbol">
@@ -19,4 +19,4 @@ const TextStrokeAnimation = ({ children }: TextStrokeAnimationProps) => {
   );
 };
 
-export default TextStrokeAnimation;
+export default TextAnimation;

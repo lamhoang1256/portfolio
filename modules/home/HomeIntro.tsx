@@ -1,4 +1,4 @@
-import { TextStrokeAnimation } from "components/text";
+import { TextAnimation } from "components/text";
 
 const HomeIntro = () => {
   return (
@@ -8,7 +8,7 @@ const HomeIntro = () => {
           <h2 className="text-2xl lg:text-[50px] font-bold">
             <span className="text-gradient bg-linearPurple">HELLO</span>, MY NAME IS
           </h2>
-          <TextStrokeAnimation>HOANG LAM</TextStrokeAnimation>
+          <TextAnimation>HOANG LAM</TextAnimation>
           <h2 className="text-2xl lg:text-[50px] font-bold">
             I AM
             <span className="text-gradient bg-linearPurple"> FRONTEND DEVELOPER</span>

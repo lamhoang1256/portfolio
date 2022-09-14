@@ -1,7 +1,13 @@
 import { Heading } from "components/text";
 import { ProjectItem } from "modules/project";
+import { IProject } from "types/project";
 
-const HomeFeature = () => {
+interface HomeFeatureProps {
+  projects: IProject[];
+}
+
+const HomeFeature = ({ projects }: HomeFeatureProps) => {
+  console.log("project: ", projects);
   return (
     <section className="mt-20">
       <div className="mt-20 layout-container">
@@ -9,9 +15,9 @@ const HomeFeature = () => {
           <Heading>Feature Projects</Heading>
         </div>
         <div className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
-          <ProjectItem />
-          <ProjectItem />
-          <ProjectItem />
+          {projects.map((project) => (
+            <ProjectItem key={project._id} project={project} />
+          ))}
         </div>
         <button className="block py-3 mx-auto mt-6 rounded-lg bg-green82 px-7 bg-linearPurple">
           View more

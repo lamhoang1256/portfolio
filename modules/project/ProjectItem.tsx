@@ -1,26 +1,32 @@
 import Image from "next/image";
+import Link from "next/link";
+import { IProject } from "types/project";
+import { sanityImgUrl } from "utils/sanityImgUrl";
 
-interface ProjectItemProps {}
+interface ProjectItemProps {
+  project: IProject;
+}
 
-const ProjectItem = ({}: ProjectItemProps) => {
+const ProjectItem = ({ project }: ProjectItemProps) => {
+  const { mainImage, slug, title, description } = project;
   return (
     <div className="rounded-xl bg-linearPurple2">
-      <div className="overflow-hidden rounded-xl">
-        <Image
-          src="/easy-home.png"
-          alt="project"
-          width="500px"
-          height="300px"
-          className="object-cover object-top transition-all duration-300 hover:scale-105"
-        />
-      </div>
+      <Link href={`/project/${slug.current}`}>
+        <div className="overflow-hidden cursor-pointer rounded-xl">
+          <Image
+            alt={slug.current}
+            width={500}
+            height={300}
+            src={sanityImgUrl(mainImage).width(500).url()}
+            className="object-cover object-top transition-all duration-300 hover:scale-105"
+          />
+        </div>
+      </Link>
       <div className="p-4 pt-3">
-        <h3 className="text-lg font-bold uppercase text-green82">Youme</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quia ullam itaque
-          temporibus culpa. Doloribus recusandae possimus unde. Ipsa cum quia praesentium vero culpa
-          labore exercitationem id eveniet, quos dolores.
-        </p>
+        <Link href={`/project/${slug.current}`}>
+          <h3 className="text-lg font-bold uppercase cursor-pointer text-green82">{title}</h3>
+        </Link>
+        <p>{description}</p>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import Title from "./Title";
 import Heading from "./Heading";
-import TextStrokeAnimation from "./TextStrokeAnimation";
+import Desc from "./Desc";
+import TextAnimation from "./TextAnimation";
 
-export { TextStrokeAnimation, Title, Heading };
+export { TextAnimation, Title, Desc, Heading };

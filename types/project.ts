@@ -7,7 +7,7 @@ export interface IProjectImages {
   };
 }
 
-export interface IProjectDetails {
+export interface IProject {
   _createdAt: string;
   _id: string;
   _rev: string;
@@ -36,5 +36,6 @@ export interface IProjectDetails {
     current: string;
   };
   title: string;
+  description: string;
   videoDemo: string;
 }

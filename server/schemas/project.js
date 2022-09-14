@@ -9,6 +9,11 @@ export default {
       type: "string",
     },
     {
+      name: "description",
+      title: "Description",
+      type: "string",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -59,7 +64,6 @@ export default {
       type: "markdown",
     },
   ],
-
   preview: {
     select: {
       title: "title",
