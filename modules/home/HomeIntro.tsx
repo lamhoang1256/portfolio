@@ -2,7 +2,7 @@ import { TextAnimation } from "components/text";
 
 const HomeIntro = () => {
   return (
-    <section className="-mt-16 bg-[#11042a] py-10">
+    <section className="bg-[#11042a] py-10">
       <div className="layout-container">
         <div className="flex flex-col items-center justify-center lg:min-h-screen">
           <h2 className="text-2xl lg:text-[50px] font-bold">

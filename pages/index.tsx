@@ -1,5 +1,12 @@
 import { LayoutHome } from "layouts";
-import { HomeAboutMe, HomeFeature, HomeIntro, HomeMySkills, HomeVSExtensions } from "modules/home";
+import {
+  HomeAboutMe,
+  HomeCanvas,
+  HomeFeature,
+  HomeIntro,
+  HomeMySkills,
+  HomeVSExtensions,
+} from "modules/home";
 import { IProject } from "types/project";
 import sanityClient from "utils/sanityClient";
 
@@ -11,6 +18,7 @@ const HomePage = ({ projects }: HomePageProps) => {
   console.log("projects: ", projects);
   return (
     <LayoutHome>
+      <HomeCanvas />
       <HomeIntro />
       <HomeAboutMe />
       <HomeMySkills />
