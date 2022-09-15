@@ -10,17 +10,19 @@ interface ProjectImageSliderProps {
 }
 
 const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps) => {
+  console.log("images: ", images);
   const [indexActive, setIndexActive] = useState(0);
   const handleChooseActive = (index: number) => setIndexActive(index);
   return (
     <div className={className}>
-      <div className="overflow-hidden border border-gray-600 rounded-lg bg-linearPurple2">
+      <div className="overflow-hidden border border-gray-600 rounded-lg image-reset bg-linearPurple2">
         <Image
           src={sanityImgUrl(images[indexActive]).width(1200).url()}
-          alt="product-active"
+          alt="project-preview"
           width={1200}
           height={560.25}
-          className="object-cover object-top"
+          objectFit="cover"
+          className="object-top"
         />
       </div>
       <div className="relative flex gap-2 my-3 overflow-x-auto">
@@ -36,7 +38,7 @@ const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps)
           >
             <Image
               src={sanityImgUrl(image).width(200).url()}
-              alt="product"
+              alt="project-preview"
               width={200}
               height={200}
               className="object-cover object-top"

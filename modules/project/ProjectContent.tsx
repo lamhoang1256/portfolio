@@ -10,7 +10,19 @@ interface ProjectContentProps {
 const ProjectContent = ({ mdxSource }: ProjectContentProps) => {
   return (
     <article className="pb-4 prose-base lg:prose-lg project-content prose-headings:font-medium prose-headings:!mt-5 prose-headings:!mb-5 prose-pre:py-2 prose-pre:px-0">
-      <MDXRemote {...mdxSource} components={{ YouTube, Image }} />
+      <MDXRemote
+        {...mdxSource}
+        components={{
+          YouTube,
+          Image,
+          a: (props: any) =>
+            props.href.startsWith("#") ? (
+              <a {...props} />
+            ) : (
+              <a {...props} target="_blank" rel="noopener noreferrer" />
+            ),
+        }}
+      />
     </article>
   );
 };
