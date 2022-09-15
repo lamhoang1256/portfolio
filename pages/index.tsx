@@ -31,7 +31,7 @@ const HomePage = ({ projects, skills }: HomePageProps) => {
 
 export async function getStaticProps() {
   const projects = await sanityClient.fetch(`*[_type == "project"]`);
-  const skills = await sanityClient.fetch(`*[_type == "skill"]`);
+  const skills = await sanityClient.fetch(`*[_type == "skill"] | order(date asc)`);
   return {
     props: {
       projects,

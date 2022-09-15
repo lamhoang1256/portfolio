@@ -1,6 +1,6 @@
 import { m } from "framer-motion";
 import { useEffect, useRef } from "react";
-export const canvasImages = [
+const canvasImages = [
   "html",
   "javascript",
   "css",

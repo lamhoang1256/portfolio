@@ -1,6 +1,12 @@
 export interface ISkill {
   name: string;
-  image: string;
+  image: {
+    _type: string;
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  };
   url: string;
   _createdAt: string;
   _id: string;

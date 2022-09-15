@@ -11,7 +11,10 @@ export default {
     {
       name: "image",
       title: "Image",
-      type: "text",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: "url",
