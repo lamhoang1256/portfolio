@@ -10,7 +10,7 @@ interface HomeMySkillsProps {
 
 const HomeMySkills = ({ skills }: HomeMySkillsProps) => {
   return (
-    <div className=" layout-container">
+    <div className="layout-container">
       <div className="mt-20 text-center">
         <Heading className="mb-3">My skills & Knowledge</Heading>
         <p>Technologies and languages that I use to make my product everyday</p>

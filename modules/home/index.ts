@@ -4,5 +4,14 @@ import HomeFeature from "./HomeFeature";
 import HomeIntro from "./HomeIntro";
 import HomeMySkills from "./HomeMySkills";
 import HomeVSExtensions from "./HomeVSExtensions";
+import HomeContact from "./HomeContact";
 
-export { HomeCanvas, HomeAboutMe, HomeFeature, HomeIntro, HomeMySkills, HomeVSExtensions };
+export {
+  HomeCanvas,
+  HomeAboutMe,
+  HomeFeature,
+  HomeIntro,
+  HomeMySkills,
+  HomeVSExtensions,
+  HomeContact,
+};

@@ -16,7 +16,7 @@ const HomeAboutMe = () => {
           </p>
           <div className="flex gap-x-3">
             <button className="py-3 rounded-lg px-7 bg-linearOrangee">Download CV</button>
-            <button className="py-3 rounded-lg bg-green82 px-7 bg-linearPurple">Contact Me</button>
+            <button className="py-3 rounded-lg px-7 bg-linearPurple">Contact Me</button>
           </div>
         </div>
         <div className="flex justify-center flex-1">
@@ -24,7 +24,7 @@ const HomeAboutMe = () => {
             alt="avatar"
             width={350}
             height={350}
-            src="/avatar-me-350-2.png"
+            src="/avatar.png"
             className="rounded-lg aspect-square"
           />
         </div>

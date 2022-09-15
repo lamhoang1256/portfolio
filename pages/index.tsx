@@ -2,6 +2,7 @@ import { LayoutHome } from "layouts";
 import {
   HomeAboutMe,
   HomeCanvas,
+  HomeContact,
   HomeFeature,
   HomeIntro,
   HomeMySkills,
@@ -25,6 +26,7 @@ const HomePage = ({ projects, skills }: HomePageProps) => {
       <HomeMySkills skills={skills} />
       <HomeFeature projects={projects} />
       <HomeVSExtensions />
+      <HomeContact />
     </LayoutHome>
   );
 };
