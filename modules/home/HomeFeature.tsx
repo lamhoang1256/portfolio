@@ -7,7 +7,6 @@ interface HomeFeatureProps {
 }
 
 const HomeFeature = ({ projects }: HomeFeatureProps) => {
-  console.log("project: ", projects);
   return (
     <section className="mt-20">
       <div className="mt-20 layout-container">

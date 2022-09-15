@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0">
+    <header className="absolute top-0 left-0 right-0">
       <div className="layout-container">
         <nav className="py-5">
           <ul className="flex items-center gap-10 font-medium">

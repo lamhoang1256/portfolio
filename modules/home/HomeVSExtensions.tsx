@@ -1,4 +1,3 @@
-import { IconDownload, IconStar } from "components/icons";
 import { Heading } from "components/text";
 import Image from "next/image";
 
@@ -25,15 +24,9 @@ const HomeVSExtensions = () => {
             <p className="my-1 line-clamp-2">
               Yet another base on Dracula Official Theme fork, but better (in my opinion)
             </p>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1">
-                <IconStar className="text-yellow-400" /> 5
-              </div>
-              <span>1.2K Download</span>
-            </div>
           </div>
         </div>
-        <div className="flex items-center gap-4 p-4 rounded-md bg-slate-800">
+        <div className="flex items-center gap-4 p-4 rounded-md bg-linearPurple2">
           <div className="flex-shrink-0">
             <Image
               src="/faster-snippet.png"

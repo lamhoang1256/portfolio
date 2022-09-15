@@ -14,20 +14,22 @@ const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps)
   const handleChooseActive = (index: number) => setIndexActive(index);
   return (
     <div className={className}>
-      <Image
-        src={sanityImgUrl(images[indexActive]).width(1200).url()}
-        alt="product-active"
-        width={1200}
-        height={560.25}
-        className="object-cover object-top"
-      />
+      <div className="border border-gray-600 rounded-lg overflow-hidden">
+        <Image
+          src={sanityImgUrl(images[indexActive]).width(1200).url()}
+          alt="product-active"
+          width={1200}
+          height={560.25}
+          className="object-cover object-top"
+        />
+      </div>
       <div className="relative flex gap-2 my-3 overflow-x-auto">
         {images.map((image, index) => (
           <div
             key={image._key}
             className={classNames(
-              "inline-block border-2 rounded-md overflow-hidden transition-all duration-200 cursor-pointer w-20 h-20",
-              indexActive === index ? " border-[#00ffea]" : "border-transparent"
+              "inline-block rounded-md overflow-hidden transition-all duration-200 cursor-pointer w-20 h-20",
+              indexActive === index ? "border-2 border-[#00ffea]" : "border-2 border-gray-600 "
             )}
             onClick={() => handleChooseActive(index)}
             onMouseEnter={() => handleChooseActive(index)}

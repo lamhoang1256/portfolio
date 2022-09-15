@@ -18,7 +18,7 @@ interface HomePageProps {
 
 const HomePage = ({ projects, skills }: HomePageProps) => {
   return (
-    <LayoutHome>
+    <LayoutHome className="-mt-16">
       <HomeCanvas />
       <HomeIntro />
       <HomeAboutMe />
