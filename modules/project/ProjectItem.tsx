@@ -12,7 +12,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
   return (
     <div className="rounded-xl bg-linearPurple2">
       <Link href={`/project/${slug.current}`}>
-        <div className="overflow-hidden cursor-pointer rounded-xl">
+        <a className="overflow-hidden rounded-xl">
           <Image
             alt={slug.current}
             width={500}
@@ -20,11 +20,13 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
             src={sanityImgUrl(mainImage).width(500).url()}
             className="object-cover object-top transition-all duration-300 hover:scale-105"
           />
-        </div>
+        </a>
       </Link>
       <div className="p-4 pt-3">
         <Link href={`/project/${slug.current}`}>
-          <h3 className="text-lg font-bold cursor-pointer text-green82">{title}</h3>
+          <a>
+            <h3 className="text-lg font-bold text-green82">{title}</h3>
+          </a>
         </Link>
         <p>{description}</p>
       </div>

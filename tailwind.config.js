@@ -15,6 +15,10 @@ module.exports = {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
       },
+      screens: {
+        max5se: { max: "320.98px" },
+        maxsm: { max: "768.98px" },
+      },
       backgroundImage: {
         linearGreen: "linear-gradient(to right bottom, rgb(29, 192, 113), rgb(164, 217, 108))",
         linearOrangee: "linear-gradient(to right top,#fc6c8f,#ffb86c)",
