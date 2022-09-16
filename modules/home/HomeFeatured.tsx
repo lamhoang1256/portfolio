@@ -5,11 +5,11 @@ import Link from "next/link";
 import { IProject } from "types/project";
 import { sanityImgUrl } from "utils/sanityImgUrl";
 
-interface HomeFeatureProps {
+interface HomeFeaturedProps {
   projects: IProject[];
 }
 
-const HomeFeature = ({ projects }: HomeFeatureProps) => {
+const HomeFeatured = ({ projects }: HomeFeaturedProps) => {
   return (
     <section className="py-10">
       <div className="layout-container">
@@ -39,4 +39,4 @@ const HomeFeature = ({ projects }: HomeFeatureProps) => {
   );
 };
 
-export default HomeFeature;
+export default HomeFeatured;

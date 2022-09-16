@@ -1,6 +1,6 @@
 import HomeCanvas from "./HomeCanvas";
 import HomeAboutMe from "./HomeAboutMe";
-import HomeFeature from "./HomeFeature";
+import HomeFeatured from "./HomeFeatured";
 import HomeIntro from "./HomeIntro";
 import HomeMySkills from "./HomeMySkills";
 import HomeVSExtensions from "./HomeVSExtensions";
@@ -9,7 +9,7 @@ import HomeContact from "./HomeContact";
 export {
   HomeCanvas,
   HomeAboutMe,
-  HomeFeature,
+  HomeFeatured,
   HomeIntro,
   HomeMySkills,
   HomeVSExtensions,

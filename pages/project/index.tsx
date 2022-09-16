@@ -11,6 +11,7 @@ interface ProjectsPageProps {
 }
 
 const ProjectsPage = ({ projects }: ProjectsPageProps) => {
+  console.log("projects: ", projects);
   return (
     <LayoutHome>
       <section className="mt-20 layout-container">

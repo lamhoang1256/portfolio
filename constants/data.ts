@@ -29,6 +29,12 @@ export const contacts = [
     image: "/youtube.png",
     display: "Youtube",
   },
+  {
+    type: "house",
+    path: "/address",
+    image: "/house.png",
+    display: "Address: Dong Thanh ward, Hoc Mon district, Ho Chi Minh city",
+  },
 ];
 
 export const canvasImages = [

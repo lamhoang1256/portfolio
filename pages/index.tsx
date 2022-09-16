@@ -3,7 +3,7 @@ import {
   HomeAboutMe,
   HomeCanvas,
   HomeContact,
-  HomeFeature,
+  HomeFeatured,
   HomeIntro,
   HomeMySkills,
   HomeVSExtensions,
@@ -24,7 +24,7 @@ const HomePage = ({ projects, skills }: HomePageProps) => {
       <HomeIntro />
       <HomeAboutMe />
       <HomeMySkills skills={skills} />
-      <HomeFeature projects={projects} />
+      <HomeFeatured projects={projects} />
       <HomeVSExtensions />
       <HomeContact />
     </LayoutHome>
@@ -32,8 +32,8 @@ const HomePage = ({ projects, skills }: HomePageProps) => {
 };
 
 export async function getStaticProps() {
-  const projects = await sanityClient.fetch(`*[_type == "project"]`);
-  const skills = await sanityClient.fetch(`*[_type == "skill"] | order(date asc)`);
+  const projects = await sanityClient.fetch(`*[_type == "project" && featured == true]`);
+  const skills = await sanityClient.fetch(`*[_type == "skill"]`);
   return {
     props: {
       projects,

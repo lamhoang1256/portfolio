@@ -2,7 +2,6 @@ import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
 import { extensions } from "constants/data";
 import Image from "next/image";
-import Link from "next/link";
 
 const HomeVSExtensions = () => {
   return (
@@ -18,23 +17,19 @@ const HomeVSExtensions = () => {
               className="flex items-center gap-4 p-4 rounded-md bg-linearCard"
               key={extension.name}
             >
-              <Link href={extension.path}>
-                <LinkTargetBlank href={extension.path} className="flex-shrink-0">
-                  <Image
-                    width={100}
-                    height={100}
-                    src={extension.image}
-                    alt={extension.name}
-                    className="rounded-md"
-                  ></Image>
-                </LinkTargetBlank>
-              </Link>
+              <LinkTargetBlank href={extension.path} className="flex-shrink-0">
+                <Image
+                  width={100}
+                  height={100}
+                  src={extension.image}
+                  alt={extension.name}
+                  className="rounded-md"
+                ></Image>
+              </LinkTargetBlank>
               <div>
-                <Link href={extension.path}>
-                  <LinkTargetBlank href={extension.path} className="text-lg font-bold text-green82">
-                    {extension.name}
-                  </LinkTargetBlank>
-                </Link>
+                <LinkTargetBlank href={extension.path} className="text-lg font-bold text-green82">
+                  {extension.name}
+                </LinkTargetBlank>
                 <p className="my-1 line-clamp-2">{extension.description}</p>
               </div>
             </div>

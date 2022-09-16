@@ -3,6 +3,7 @@ import { Input } from "components/input";
 import { Label } from "components/label";
 import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
+import { TextArea } from "components/textarea";
 import { contacts } from "constants/data";
 import emailjs from "emailjs-com";
 import Image from "next/image";
@@ -38,7 +39,7 @@ const HomeContact = () => {
           <p>We look forward to hearing from you!</p>
         </div>
         <div className="grid gap-6 mt-10 lg:grid-cols-2">
-          <form ref={formRef} onSubmit={handleSubmit}>
+          <form ref={formRef} onSubmit={handleSubmit} autoComplete="false">
             <FormGroup>
               <Label>Your name</Label>
               <Input placeholder="John" name="user_name" required />
@@ -49,7 +50,7 @@ const HomeContact = () => {
             </FormGroup>
             <FormGroup>
               <Label>Messager</Label>
-              <Input placeholder="I love you" name="message" required />
+              <TextArea placeholder="I love you" name="message" required rows={2} />
             </FormGroup>
             <button
               type="submit"
@@ -63,7 +64,7 @@ const HomeContact = () => {
           </form>
           <div>
             <h3>Other places</h3>
-            <ul className="mt-4">
+            <ul className="mt-5">
               {contacts.map((contact) => (
                 <li key={contact.type} className="mb-5">
                   <LinkTargetBlank
