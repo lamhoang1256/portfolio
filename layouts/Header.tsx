@@ -14,7 +14,7 @@ const links = [
     display: "Posts",
   },
   {
-    path: "/cv",
+    path: PATH.cv,
     display: "CV",
   },
 ];

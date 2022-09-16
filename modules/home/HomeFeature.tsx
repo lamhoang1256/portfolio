@@ -1,7 +1,9 @@
+import { Card } from "components/card";
 import { Heading } from "components/text";
-import { ProjectCard } from "modules/project";
+import { PATH } from "constants/path";
 import Link from "next/link";
 import { IProject } from "types/project";
+import { sanityImgUrl } from "utils/sanityImgUrl";
 
 interface HomeFeatureProps {
   projects: IProject[];
@@ -17,10 +19,17 @@ const HomeFeature = ({ projects }: HomeFeatureProps) => {
         </div>
         <div className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <ProjectCard key={project._id} project={project} />
+            <Card
+              key={project._id}
+              title={project.title}
+              slug={project.slug.current}
+              path={`${PATH.project}/${project.slug.current}`}
+              image={sanityImgUrl(project.mainImage).width(500).url()}
+              description={project.description}
+            />
           ))}
         </div>
-        <Link href="/project">
+        <Link href={PATH.project}>
           <button className="block py-3 mx-auto mt-6 rounded-lg bg-green82 px-7 bg-linearPurple">
             View more
           </button>
