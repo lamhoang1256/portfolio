@@ -1,6 +1,6 @@
 import { Heading } from "components/text";
 import { LayoutHome } from "layouts";
-import { ProjectItem } from "modules/project";
+import { ProjectCard } from "modules/project";
 import { IProject } from "types/project";
 import sanityClient from "utils/sanityClient";
 
@@ -17,7 +17,7 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
         </div>
         <div className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <ProjectItem key={project._id} project={project} />
+            <ProjectCard key={project._id} project={project} />
           ))}
         </div>
       </section>

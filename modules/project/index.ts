@@ -1,5 +1,5 @@
 import ProjectContent from "./ProjectContent";
 import ProjectImageSlider from "./ProjectImageSlider";
-import ProjectItem from "./ProjectItem";
+import ProjectCard from "./ProjectCard";
 
-export { ProjectItem, ProjectContent, ProjectImageSlider };
+export { ProjectCard, ProjectContent, ProjectImageSlider };

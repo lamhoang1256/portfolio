@@ -3,11 +3,11 @@ import Link from "next/link";
 import { IProject } from "types/project";
 import { sanityImgUrl } from "utils/sanityImgUrl";
 
-interface ProjectItemProps {
+interface ProjectCardProps {
   project: IProject;
 }
 
-const ProjectItem = ({ project }: ProjectItemProps) => {
+const ProjectCard = ({ project }: ProjectCardProps) => {
   const { mainImage, slug, title, description } = project;
   return (
     <div className="overflow-hidden border border-gray-600 rounded-xl bg-linearCard">
@@ -34,4 +34,4 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
   );
 };
 
-export default ProjectItem;
+export default ProjectCard;

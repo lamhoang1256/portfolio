@@ -21,20 +21,22 @@ const HomeAboutMe = () => {
                 href="https://cybersoft.edu.vn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center flex-shrink-0 w-16 h-16 overflow-hidden bg-white rounded-full"
+                className="flex items-center justify-center flex-shrink-0 w-12 h-12 overflow-hidden bg-white rounded-full"
               >
-                <Image alt="cybersoft" src="/cybersoft.png" width={50} height={45} />
+                <Image alt="cybersoft" src="/cybersoft.png" width={35} height={30} />
               </a>
               <div>
                 <h3 className="font-semibold">PROFESSIONAL FRONT-END DEVELOPER</h3>
-                <p>Score: 9.6/10</p>
-                <a href="https://cybersoft.edu.vn" target="_blank" rel="noopener noreferrer">
-                  Cybersoft
-                </a>
+                <span>
+                  <a href="https://cybersoft.edu.vn" target="_blank" rel="noopener noreferrer">
+                    Cybersoft
+                  </a>
+                </span>
+                <span className="ml-3">Score: 9.6/10</span>
               </div>
             </div>
           </div>
-          <div className="flex mt-7 gap-x-3">
+          <div className="flex mt-6 gap-x-3">
             <button className="py-3 rounded-lg px-7 bg-linearOrangee">Download CV</button>
             <button className="py-3 rounded-lg px-7 bg-linearPurple">Contact Me</button>
           </div>

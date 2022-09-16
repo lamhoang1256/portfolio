@@ -1,5 +1,6 @@
 import { Heading } from "components/text";
-import { ProjectItem } from "modules/project";
+import { ProjectCard } from "modules/project";
+import Link from "next/link";
 import { IProject } from "types/project";
 
 interface HomeFeatureProps {
@@ -16,12 +17,14 @@ const HomeFeature = ({ projects }: HomeFeatureProps) => {
         </div>
         <div className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <ProjectItem key={project._id} project={project} />
+            <ProjectCard key={project._id} project={project} />
           ))}
         </div>
-        <button className="block py-3 mx-auto mt-6 rounded-lg bg-green82 px-7 bg-linearPurple">
-          View more
-        </button>
+        <Link href="/project">
+          <button className="block py-3 mx-auto mt-6 rounded-lg bg-green82 px-7 bg-linearPurple">
+            View more
+          </button>
+        </Link>
       </div>
     </section>
   );
