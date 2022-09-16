@@ -20,7 +20,8 @@
   margin: 0 auto;
   padding: 0 15px;
 }
-.project-content {
+.article-content {
+  ol,
   ul {
     list-style: disc;
   }
@@ -49,6 +50,9 @@
     &:hover {
       box-shadow: 0 2px 0 #5773ff;
     }
+  }
+  img {
+    border-radius: 8px;
   }
   h2 {
     font-weight: 800;

@@ -1,9 +1,9 @@
-import { Desc, Heading } from "components/text";
+import { ArticleContent } from "components/article";
+import { Heading } from "components/text";
 import { LayoutHome } from "layouts";
-import { ProjectContent, ProjectImageSlider } from "modules/project";
+import { ProjectImageSlider } from "modules/project";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { useRouter } from "next/router";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
@@ -16,7 +16,6 @@ interface ProjectDetailsPageProps {
 }
 
 const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => {
-  const router = useRouter();
   return (
     <LayoutHome>
       <div className="layout-container">
@@ -24,7 +23,7 @@ const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => 
           <Heading>{project.title}</Heading>
           <ProjectImageSlider images={project.images} className="my-6"></ProjectImageSlider>
           <p className="text-lg">{project.description}</p>
-          <ProjectContent mdxSource={mdxSource} />
+          <ArticleContent mdxSource={mdxSource} />
         </section>
       </div>
     </LayoutHome>

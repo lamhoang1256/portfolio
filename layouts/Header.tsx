@@ -1,15 +1,16 @@
+import { PATH } from "constants/path";
 import Link from "next/link";
 const links = [
   {
-    path: "/",
+    path: PATH.home,
     display: "Home",
   },
   {
-    path: "/project",
+    path: PATH.project,
     display: "Projects",
   },
   {
-    path: "/post",
+    path: PATH.post,
     display: "Posts",
   },
   {
