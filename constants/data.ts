@@ -19,7 +19,7 @@ export const contacts = [
   },
   {
     type: "gmail",
-    path: "gmail.com",
+    path: "mailto:hoanglam1309a@gmail.com",
     image: "/gmail.png",
     display: "Gmail: hoanglam1309a@gmail.com",
   },

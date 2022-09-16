@@ -14,7 +14,27 @@ const HomeAboutMe = () => {
             single website that I develop. I guess that&apos;s all I have to share about myself.
             Thank you for reading!
           </p>
-          <div className="flex gap-x-3">
+          <div className="flex flex-col gap-5 lg:flex-row">
+            <div className="font-medium">2021 - 2022 :</div>
+            <div className="flex gap-3">
+              <a
+                href="https://cybersoft.edu.vn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center flex-shrink-0 w-16 h-16 overflow-hidden bg-white rounded-full"
+              >
+                <Image alt="cybersoft" src="/cybersoft.png" width={50} height={45} />
+              </a>
+              <div>
+                <h3 className="font-semibold">PROFESSIONAL FRONT-END DEVELOPER</h3>
+                <p>Score: 9.6/10</p>
+                <a href="https://cybersoft.edu.vn" target="_blank" rel="noopener noreferrer">
+                  Cybersoft
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex mt-7 gap-x-3">
             <button className="py-3 rounded-lg px-7 bg-linearOrangee">Download CV</button>
             <button className="py-3 rounded-lg px-7 bg-linearPurple">Contact Me</button>
           </div>

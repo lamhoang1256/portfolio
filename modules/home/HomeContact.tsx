@@ -18,10 +18,10 @@ const HomeContact = () => {
     try {
       setDone(true);
       await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-        formRef.current || "",
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
       );
     } catch (error) {
       console.log(error);
@@ -33,7 +33,7 @@ const HomeContact = () => {
   return (
     <div className="layout-container">
       <div className="mt-20 text-center">
-        <Heading className="mb-3">Get in touch</Heading>
+        <Heading>Get in touch</Heading>
         <p>We look forward to hearing from you!</p>
       </div>
       <div className="grid gap-6 mt-10 lg:grid-cols-2">

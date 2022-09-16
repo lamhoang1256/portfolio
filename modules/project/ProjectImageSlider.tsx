@@ -15,12 +15,12 @@ const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps)
   const handleChooseActive = (index: number) => setIndexActive(index);
   return (
     <div className={className}>
-      <div className="overflow-hidden border border-gray-600 rounded-lg image-reset bg-linearPurple2">
+      <div className="overflow-hidden border border-gray-600 rounded-lg image-reset bg-linearPurple2 aspect-video">
         <Image
           src={sanityImgUrl(images[indexActive]).width(1200).url()}
           alt="project-preview"
           width={1200}
-          height={560.25}
+          height={675}
           objectFit="cover"
           className="object-top"
         />

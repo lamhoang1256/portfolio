@@ -9,9 +9,10 @@ interface HomeFeatureProps {
 const HomeFeature = ({ projects }: HomeFeatureProps) => {
   return (
     <section className="mt-20">
-      <div className="mt-20 layout-container">
+      <div className="layout-container">
         <div className="text-center">
           <Heading>Feature Projects</Heading>
+          <p>I&apos;m sure you will like my projects</p>
         </div>
         <div className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (

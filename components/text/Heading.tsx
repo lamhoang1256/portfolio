@@ -9,7 +9,7 @@ const Heading = ({ children, className = "" }: HeadingProps) => {
   return (
     <h2
       className={classNames(
-        "text-2xl leading-normal lg:text-4xl font-montserrat font-semibold",
+        "text-2xl leading-normal lg:text-4xl font-montserrat font-semibold mb-3",
         className
       )}
     >

@@ -6,7 +6,7 @@ const HomeVSExtensions = () => {
     <div className="layout-container">
       <div className="mt-20 text-center">
         <Heading>My vscode extensions</Heading>
-        <p className="mt-3">I am sure you will like my vscode extensions</p>
+        <p>Useful vscode extension developed by me</p>
       </div>
       <div className="grid gap-6 mt-10 lg:grid-cols-2">
         <div className="flex items-center gap-4 p-4 rounded-md bg-linearPurple2">
