@@ -2,6 +2,7 @@ import { YouTube } from "components/youtube";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Image from "next/image";
 import "highlight.js/styles/base16/dracula.css";
+import { LinkTargetBlank } from "components/link";
 
 interface ArticleContentProps {
   mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -16,11 +17,7 @@ const ArticleContent = ({ mdxSource }: ArticleContentProps) => {
           YouTube,
           Image,
           a: (props: any) =>
-            props.href.startsWith("#") ? (
-              <a {...props} />
-            ) : (
-              <a {...props} target="_blank" rel="noopener noreferrer" />
-            ),
+            props.href.startsWith("#") ? <a {...props} /> : <LinkTargetBlank {...props} />,
         }}
       />
     </article>

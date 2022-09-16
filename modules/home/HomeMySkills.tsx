@@ -1,3 +1,4 @@
+import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,17 +21,19 @@ const HomeMySkills = ({ skills }: HomeMySkillsProps) => {
           {skills
             .sort((a, b) => Number(new Date(a._createdAt)) - Number(new Date(b._createdAt)))
             .map((skill) => (
-              <Link href={skill.url} key={skill._id}>
-                <a className="flex flex-col text-center transition-all duration-200 hover:scale-105">
-                  <Image
-                    alt={skill.name}
-                    src={sanityImgUrl(skill.image).url()}
-                    width={66}
-                    height={66}
-                  />
-                  <span>{skill.name}</span>
-                </a>
-              </Link>
+              <LinkTargetBlank
+                key={skill._id}
+                href={skill.url}
+                className="flex flex-col text-center transition-all duration-200 hover:scale-105"
+              >
+                <Image
+                  alt={skill.name}
+                  src={sanityImgUrl(skill.image).url()}
+                  width={66}
+                  height={66}
+                />
+                <span>{skill.name}</span>
+              </LinkTargetBlank>
             ))}
         </div>
       </div>

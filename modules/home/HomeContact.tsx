@@ -1,13 +1,13 @@
 import { FormGroup } from "components/form";
 import { Input } from "components/input";
 import { Label } from "components/label";
+import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
-import Image from "next/image";
+import { contacts } from "constants/data";
 import emailjs from "emailjs-com";
-import Link from "next/link";
+import Image from "next/image";
 import { FormEvent, useRef, useState } from "react";
 import classNames from "utils/className";
-import { contacts } from "constants/data";
 
 const HomeContact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -66,22 +66,21 @@ const HomeContact = () => {
             <ul className="mt-4">
               {contacts.map((contact) => (
                 <li key={contact.type} className="mb-5">
-                  <Link href={contact.path}>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-x-3"
-                    >
-                      <Image
-                        width={30}
-                        height={30}
-                        alt={contact.type}
-                        src={contact.image}
-                        className="rounded-full"
-                      />
-                      <span>{contact.display}</span>
-                    </a>
-                  </Link>
+                  <LinkTargetBlank
+                    href={contact.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-x-3"
+                  >
+                    <Image
+                      width={30}
+                      height={30}
+                      alt={contact.type}
+                      src={contact.image}
+                      className="rounded-full"
+                    />
+                    <span>{contact.display}</span>
+                  </LinkTargetBlank>
                 </li>
               ))}
             </ul>

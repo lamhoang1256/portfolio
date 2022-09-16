@@ -1,16 +1,16 @@
+import { LinkTargetBlank } from "components/link";
+
 const Footer = () => {
   return (
     <footer className="py-10 text-center">
       <p>
         Designed & Developed by{" "}
-        <a
+        <LinkTargetBlank
           href="https://github.com/lamhoang1256"
-          target="_blank"
-          rel="noopener noreferrer"
           className="font-semibold text-blue57"
         >
           Nguyen Hoang Lam
-        </a>
+        </LinkTargetBlank>
       </p>
       <p>Copyright © 2022 All Rights Reserved.</p>
     </footer>

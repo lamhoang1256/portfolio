@@ -1,3 +1,4 @@
+import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
 import Image from "next/image";
 
@@ -17,20 +18,16 @@ const HomeAboutMe = () => {
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="font-medium">2021 - 2022 :</div>
             <div className="flex gap-3">
-              <a
+              <LinkTargetBlank
                 href="https://cybersoft.edu.vn"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center justify-center flex-shrink-0 w-12 h-12 overflow-hidden bg-white rounded-full"
               >
                 <Image alt="cybersoft" src="/cybersoft.png" width={35} height={30} />
-              </a>
+              </LinkTargetBlank>
               <div>
                 <h3 className="font-semibold">PROFESSIONAL FRONT-END DEVELOPER</h3>
                 <span>
-                  <a href="https://cybersoft.edu.vn" target="_blank" rel="noopener noreferrer">
-                    Cybersoft
-                  </a>
+                  <LinkTargetBlank href="https://cybersoft.edu.vn">Cybersoft</LinkTargetBlank>
                 </span>
                 <span className="ml-3">Score: 9.6/10</span>
               </div>
