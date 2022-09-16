@@ -3,6 +3,7 @@ import { Heading } from "components/text";
 import { LayoutHome } from "layouts";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import Head from "next/head";
 import Image from "next/image";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
@@ -18,25 +19,30 @@ interface PostDetailsPageProps {
 
 const PostDetailsPage = ({ post, mdxSource }: PostDetailsPageProps) => {
   return (
-    <LayoutHome>
-      <div className="layout-container">
-        <section className="max-w-[900px] mt-4 mx-auto">
-          <Heading>{post.title}</Heading>
-          <div className="w-full my-4 overflow-hidden border border-gray-600 rounded-lg aspect-video">
-            <Image
-              src={sanityImgUrl(post.mainImage).width(1200).url()}
-              alt={post.slug.current}
-              width={1200}
-              height={675}
-              objectFit="cover"
-              className="object-top"
-            />
-          </div>
-          <p className="text-lg">{post.description}</p>
-          <ArticleContent mdxSource={mdxSource} />
-        </section>
-      </div>
-    </LayoutHome>
+    <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      <LayoutHome>
+        <div className="layout-container">
+          <section className="max-w-[900px] mt-4 mx-auto">
+            <Heading>{post.title}</Heading>
+            <div className="w-full my-4 overflow-hidden border border-gray-600 rounded-lg aspect-video">
+              <Image
+                src={sanityImgUrl(post.mainImage).width(1200).url()}
+                alt={post.slug.current}
+                width={1200}
+                height={675}
+                objectFit="cover"
+                className="object-top"
+              />
+            </div>
+            <p className="text-lg">{post.description}</p>
+            <ArticleContent mdxSource={mdxSource} />
+          </section>
+        </div>
+      </LayoutHome>
+    </>
   );
 };
 

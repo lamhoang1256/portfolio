@@ -4,6 +4,7 @@ import { LayoutHome } from "layouts";
 import { ProjectImageSlider } from "modules/project";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import Head from "next/head";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
@@ -17,16 +18,21 @@ interface ProjectDetailsPageProps {
 
 const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => {
   return (
-    <LayoutHome>
-      <div className="layout-container">
-        <section className="max-w-[900px] mt-4 mx-auto">
-          <Heading>{project.title}</Heading>
-          <ProjectImageSlider images={project.images} className="my-6"></ProjectImageSlider>
-          <p className="text-lg">{project.description}</p>
-          <ArticleContent mdxSource={mdxSource} />
-        </section>
-      </div>
-    </LayoutHome>
+    <>
+      <Head>
+        <title>{project.title}</title>
+      </Head>
+      <LayoutHome>
+        <div className="layout-container">
+          <section className="max-w-[900px] mt-4 mx-auto">
+            <Heading>{project.title}</Heading>
+            <ProjectImageSlider images={project.images} className="my-6"></ProjectImageSlider>
+            <p className="text-lg">{project.description}</p>
+            <ArticleContent mdxSource={mdxSource} />
+          </section>
+        </div>
+      </LayoutHome>
+    </>
   );
 };
 
