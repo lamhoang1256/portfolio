@@ -2,30 +2,31 @@ import { Card } from "components/card";
 import { Heading } from "components/text";
 import { PATH } from "constants/path";
 import { LayoutHome } from "layouts";
-import { IProject } from "types/project";
+import { IPost } from "types/post";
 import sanityClient from "utils/sanityClient";
 import { sanityImgUrl } from "utils/sanityImgUrl";
 
-interface ProjectsPageProps {
-  projects: IProject[];
+interface PostPageProps {
+  posts: IPost[];
 }
 
-const ProjectsPage = ({ projects }: ProjectsPageProps) => {
+const PostPage = ({ posts }: PostPageProps) => {
+  console.log("posts: ", posts);
   return (
     <LayoutHome>
       <section className="mt-20 layout-container">
         <div className="text-center">
-          <Heading>Projects</Heading>
+          <Heading>Posts</Heading>
         </div>
         <div className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {posts.map((post) => (
             <Card
-              key={project._id}
-              title={project.title}
-              slug={project.slug.current}
-              path={`${PATH.project}/${project.slug.current}`}
-              image={sanityImgUrl(project.mainImage).width(500).url()}
-              description={project.description}
+              key={post._id}
+              title={post.title}
+              slug={post.slug.current}
+              path={`${PATH.post}/${post.slug.current}`}
+              image={sanityImgUrl(post.mainImage).width(500).url()}
+              description={post.description}
             />
           ))}
         </div>
@@ -35,12 +36,12 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
 };
 
 export async function getStaticProps() {
-  const projects = await sanityClient.fetch(`*[_type == "project"]`);
+  const posts = await sanityClient.fetch(`*[_type == "post"]`);
   return {
     props: {
-      projects,
+      posts,
     },
   };
 }
 
-export default ProjectsPage;
+export default PostPage;

@@ -18,6 +18,11 @@ export default {
       },
     },
     {
+      name: "description",
+      title: "Description",
+      type: "string",
+    },
+    {
       name: "author",
       title: "Author",
       type: "reference",
@@ -43,12 +48,11 @@ export default {
       type: "datetime",
     },
     {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
+      name: "content",
+      title: "content",
+      type: "markdown",
     },
   ],
-
   preview: {
     select: {
       title: "title",

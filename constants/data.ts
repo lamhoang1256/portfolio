@@ -52,3 +52,18 @@ export const canvasImages = [
   (icon) =>
     `https://images.weserv.nl/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FPKief%2Fvscode-material-icon-theme%40main%2Ficons%2F${icon}.svg&w=50&h=50`
 );
+
+export const extensions = [
+  {
+    name: "Beautiful Dracula",
+    path: "https://marketplace.visualstudio.com/items?itemName=NguyenHoangLam.beautiful-dracula",
+    image: "/beautiful-dracula.png",
+    description: "Yet another base on Dracula Official Theme fork, but better (in my opinion)",
+  },
+  {
+    name: "Faster Snippets",
+    path: "#",
+    image: "/faster-snippet.png",
+    description: "Comming soon",
+  },
+];
