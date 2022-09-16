@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import { IProjectImages } from "types/project";
 import classNames from "utils/className";
 import { sanityImgUrl } from "utils/sanityImgUrl";
@@ -10,27 +10,51 @@ interface ProjectImageSliderProps {
 }
 
 const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps) => {
-  console.log("images: ", images);
   const [indexActive, setIndexActive] = useState(0);
-  const handleChooseActive = (index: number) => setIndexActive(index);
+  const [imageActiveState, setImageActiveState] = useState({
+    backgroundImage: `url(${sanityImgUrl(images[indexActive]).width(1200).url()})`,
+    backgroundPosition: "0% 0%",
+    backgroundSize: "cover",
+  });
+  const handleChooseActive = (index: number) => {
+    setIndexActive(index);
+    setImageActiveState({
+      ...imageActiveState,
+      backgroundImage: `url(${sanityImgUrl(images[index]).width(1200).url()})`,
+    });
+  };
+  const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.pageX - left) / width) * 100;
+    const y = ((e.pageY - top) / height) * 100;
+    setImageActiveState({
+      ...imageActiveState,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: "initial",
+    });
+  };
+  const handleMouseLeave = () => {
+    setImageActiveState({
+      ...imageActiveState,
+      backgroundPosition: "0% 0%",
+      backgroundSize: "cover",
+    });
+  };
+
   return (
     <div className={className}>
-      <div className="overflow-hidden border border-gray-600 rounded-lg image-reset bg-linearCard aspect-video">
-        <Image
-          src={sanityImgUrl(images[indexActive]).width(1200).url()}
-          alt="project-preview"
-          width={1200}
-          height={675}
-          objectFit="cover"
-          className="object-top"
-        />
-      </div>
+      <div
+        className="object-cover object-top w-full overflow-hidden bg-no-repeat bg-cover border border-gray-600 rounded-lg aspect-video image-reset bg-linearPurple2 cursor-zoom-in"
+        style={imageActiveState}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      />
       <div className="relative flex gap-2 my-3 overflow-x-auto">
         {images.map((image, index) => (
           <div
             key={image._key}
             className={classNames(
-              "inline-block rounded-md overflow-hidden transition-all duration-200 cursor-pointer w-20 h-20 bg-linearCard border-2",
+              "inline-block rounded-md overflow-hidden transition-all duration-200 cursor-pointer w-20 h-20 bg-linearPurple2 border-2",
               indexActive === index ? " border-[#00ffea]" : "border-gray-600"
             )}
             onClick={() => handleChooseActive(index)}
