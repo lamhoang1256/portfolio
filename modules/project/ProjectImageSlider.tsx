@@ -49,12 +49,12 @@ const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps)
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       />
-      <div className="relative flex gap-2 my-3 overflow-x-auto">
+      <div className="relative flex gap-2 py-3 overflow-x-auto customScrollbar">
         {images.map((image, index) => (
           <div
             key={image._key}
             className={classNames(
-              "inline-block rounded-md overflow-hidden transition-all duration-200 cursor-pointer w-20 h-20 bg-linearPurple2 border-2",
+              "inline-block rounded-md overflow-hidden transition-all duration-200 cursor-pointer w-20 h-20 bg-linearCard flex-shrink-0 border-2",
               indexActive === index ? " border-[#00ffea]" : "border-gray-600"
             )}
             onClick={() => handleChooseActive(index)}
