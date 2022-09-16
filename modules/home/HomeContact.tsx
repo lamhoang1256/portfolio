@@ -3,7 +3,10 @@ import { Input } from "components/input";
 import { Label } from "components/label";
 import { Heading } from "components/text";
 import Image from "next/image";
+import emailjs from "emailjs-com";
 import Link from "next/link";
+import { FormEvent, useRef, useState } from "react";
+import classNames from "utils/className";
 
 const contacts = [
   {
@@ -39,6 +42,26 @@ const contacts = [
 ];
 
 const HomeContact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [done, setDone] = useState(false);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    try {
+      setDone(true);
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        formRef.current || "",
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+      );
+    } catch (error) {
+      console.log(error);
+    } finally {
+      formRef.current.reset();
+      setDone(false);
+    }
+  };
   return (
     <div className="layout-container">
       <div className="mt-20 text-center">
@@ -46,20 +69,28 @@ const HomeContact = () => {
         <p>We look forward to hearing from you!</p>
       </div>
       <div className="grid gap-6 mt-10 lg:grid-cols-2">
-        <form action="#">
+        <form ref={formRef} onSubmit={handleSubmit}>
           <FormGroup>
             <Label>Your name</Label>
-            <Input placeholder="John" />
+            <Input placeholder="John" name="user_name" required />
           </FormGroup>
           <FormGroup>
             <Label>Your email</Label>
-            <Input placeholder="John@gmail.com" />
+            <Input type="email" placeholder="John@gmail.com" name="user_email" required />
           </FormGroup>
           <FormGroup>
             <Label>Messager</Label>
-            <Input placeholder="I love you" />
+            <Input placeholder="I love you" name="message" required />
           </FormGroup>
-          <button className="w-full rounded h-11 bg-purple9c">Send</button>
+          <button
+            type="submit"
+            className={classNames(
+              "w-full text-center rounded h-11 bg-purple9c",
+              done && "cursor-not-allowed"
+            )}
+          >
+            {done ? "Sending..." : "Send"}
+          </button>
         </form>
         <div>
           <h3>Other places</h3>
