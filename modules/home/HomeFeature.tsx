@@ -9,7 +9,7 @@ interface HomeFeatureProps {
 
 const HomeFeature = ({ projects }: HomeFeatureProps) => {
   return (
-    <section className="mt-20">
+    <section className="py-10">
       <div className="layout-container">
         <div className="text-center">
           <Heading>Feature Projects</Heading>
