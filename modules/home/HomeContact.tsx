@@ -7,39 +7,7 @@ import emailjs from "emailjs-com";
 import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
 import classNames from "utils/className";
-
-const contacts = [
-  {
-    type: "github",
-    path: "https://github.com/lamhoang1256",
-    image: "/github.png",
-    display: "Github: lamhoang1256",
-  },
-  {
-    type: "facebook",
-    path: "https://www.facebook.com/profile.php?id=100023642404837",
-    image: "/facebook.png",
-    display: "Facebook",
-  },
-  {
-    type: "microsoft",
-    path: "https://marketplace.visualstudio.com/publishers/NguyenHoangLam",
-    image: "/microsoft.png",
-    display: "Marketplace",
-  },
-  {
-    type: "gmail",
-    path: "gmail.com",
-    image: "/gmail.png",
-    display: "Gmail: hoanglam1309a@gmail.com",
-  },
-  {
-    type: "youtube",
-    path: "https://www.youtube.com/channel/UCuEJII_bAl1h3ovns8O5azg",
-    image: "/youtube.png",
-    display: "Youtube",
-  },
-];
+import { contacts } from "constants/data";
 
 const HomeContact = () => {
   const formRef = useRef<HTMLFormElement>(null);

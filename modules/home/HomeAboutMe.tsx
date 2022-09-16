@@ -19,7 +19,7 @@ const HomeAboutMe = () => {
             <button className="py-3 rounded-lg px-7 bg-linearPurple">Contact Me</button>
           </div>
         </div>
-        <div className="flex justify-center flex-1">
+        <div className="flex justify-center flex-1 maxsm:max-w-[250px]">
           <Image
             alt="avatar"
             width={350}

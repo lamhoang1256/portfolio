@@ -1,0 +1,54 @@
+export const contacts = [
+  {
+    type: "github",
+    path: "https://github.com/lamhoang1256",
+    image: "/github.png",
+    display: "Github: lamhoang1256",
+  },
+  {
+    type: "facebook",
+    path: "https://www.facebook.com/profile.php?id=100023642404837",
+    image: "/facebook.png",
+    display: "Facebook",
+  },
+  {
+    type: "microsoft",
+    path: "https://marketplace.visualstudio.com/publishers/NguyenHoangLam",
+    image: "/microsoft.png",
+    display: "Marketplace",
+  },
+  {
+    type: "gmail",
+    path: "gmail.com",
+    image: "/gmail.png",
+    display: "Gmail: hoanglam1309a@gmail.com",
+  },
+  {
+    type: "youtube",
+    path: "https://www.youtube.com/channel/UCuEJII_bAl1h3ovns8O5azg",
+    image: "/youtube.png",
+    display: "Youtube",
+  },
+];
+
+export const canvasImages = [
+  "html",
+  "javascript",
+  "css",
+  "react",
+  "typescript",
+  "vue",
+  "svelte",
+  "nodejs",
+  "tailwindcss",
+  "sass",
+  "next",
+  "firebase",
+  "vscode",
+  "git",
+  "vite",
+  "webpack",
+].map(
+  (icon) =>
+    `https://images.weserv.nl/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FPKief%2Fvscode-material-icon-theme%40main%2Ficons%2F${icon}.svg&w=50&h=50`
+);
