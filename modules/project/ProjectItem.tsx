@@ -10,7 +10,7 @@ interface ProjectItemProps {
 const ProjectItem = ({ project }: ProjectItemProps) => {
   const { mainImage, slug, title, description } = project;
   return (
-    <div className="overflow-hidden border border-gray-600 rounded-xl bg-linearPurple2">
+    <div className="overflow-hidden border border-gray-600 rounded-xl bg-linearCard">
       <Link href={`/project/${slug.current}`}>
         <a className="overflow-hidden rounded-xl">
           <Image

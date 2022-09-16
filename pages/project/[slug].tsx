@@ -17,7 +17,6 @@ interface ProjectDetailsPageProps {
 
 const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => {
   const router = useRouter();
-  if (router.isFallback) return <span>Loading</span>;
   return (
     <LayoutHome>
       <div className="layout-container">
@@ -69,7 +68,7 @@ export async function getStaticPaths() {
   );
   return {
     paths: paths.map((slug: string) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 

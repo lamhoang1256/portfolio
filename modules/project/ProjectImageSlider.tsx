@@ -15,7 +15,7 @@ const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps)
   const handleChooseActive = (index: number) => setIndexActive(index);
   return (
     <div className={className}>
-      <div className="overflow-hidden border border-gray-600 rounded-lg image-reset bg-linearPurple2 aspect-video">
+      <div className="overflow-hidden border border-gray-600 rounded-lg image-reset bg-linearCard aspect-video">
         <Image
           src={sanityImgUrl(images[indexActive]).width(1200).url()}
           alt="project-preview"
@@ -30,7 +30,7 @@ const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps)
           <div
             key={image._key}
             className={classNames(
-              "inline-block rounded-md overflow-hidden transition-all duration-200 cursor-pointer w-20 h-20 bg-linearPurple2 border-2",
+              "inline-block rounded-md overflow-hidden transition-all duration-200 cursor-pointer w-20 h-20 bg-linearCard border-2",
               indexActive === index ? " border-[#00ffea]" : "border-gray-600"
             )}
             onClick={() => handleChooseActive(index)}

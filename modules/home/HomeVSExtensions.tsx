@@ -9,7 +9,7 @@ const HomeVSExtensions = () => {
         <p>Useful vscode extension developed by me</p>
       </div>
       <div className="grid gap-6 mt-10 lg:grid-cols-2">
-        <div className="flex items-center gap-4 p-4 rounded-md bg-linearPurple2">
+        <div className="flex items-center gap-4 p-4 rounded-md bg-linearCard">
           <div className="flex-shrink-0">
             <Image
               src="/beautiful-dracula.png"
@@ -26,7 +26,7 @@ const HomeVSExtensions = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-4 p-4 rounded-md bg-linearPurple2">
+        <div className="flex items-center gap-4 p-4 rounded-md bg-linearCard">
           <div className="flex-shrink-0">
             <Image
               src="/faster-snippet.png"
