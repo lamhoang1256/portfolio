@@ -23,8 +23,8 @@ const Header = () => {
   return (
     <header className="absolute top-0 left-0 right-0 z-10">
       <div className="layout-container">
-        <nav className="py-5">
-          <ul className="flex items-center gap-10 font-medium">
+        <nav className="py-8">
+          <ul className="flex items-center justify-center gap-10 font-medium">
             {links.map((link) => (
               <li key={link.path}>
                 <Link href={link.path}>

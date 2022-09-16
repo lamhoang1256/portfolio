@@ -63,7 +63,7 @@ export const extensions = [
   {
     name: "Faster Snippets",
     path: "/comming-soon",
-    image: "/faster-snippet.png",
+    image: "/faster-snippets.png",
     description: "Comming soon",
   },
 ];

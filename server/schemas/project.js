@@ -59,6 +59,12 @@ export default {
       type: "datetime",
     },
     {
+      name: "featured",
+      title: "Featured",
+      type: "boolean",
+      default: false,
+    },
+    {
       name: "content",
       title: "content",
       type: "markdown",
