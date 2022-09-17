@@ -2,7 +2,7 @@ import { LinkTargetBlank } from "components/link";
 
 const Footer = () => {
   return (
-    <footer className="py-10 text-center">
+    <footer className="py-10 text-sm text-center md:text-base">
       <p>
         Designed & Developed by{" "}
         <LinkTargetBlank
