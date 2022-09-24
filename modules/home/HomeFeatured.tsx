@@ -24,7 +24,13 @@ const HomeFeatured = ({ projects }: HomeFeaturedProps) => {
               title={project.title}
               slug={project.slug.current}
               path={`${PATH.project}/${project.slug.current}`}
-              image={sanityImgUrl(project.mainImage).width(500).url()}
+              image={sanityImgUrl(project.mainImage)
+                .width(600)
+                .height(350)
+                .focalPoint(0, 0)
+                .crop("focalpoint")
+                .fit("crop")
+                .url()}
               description={project.description}
             />
           ))}

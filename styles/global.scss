@@ -34,9 +34,14 @@
   #main-technology-used + ul {
     list-style-image: url("/icon-check-blue.svg");
   }
-  summary {
-    margin-bottom: 14px;
-    cursor: pointer;
+  details {
+    summary {
+      margin-bottom: 14px;
+      cursor: pointer;
+    }
+    img {
+      border-radius: 4px;
+    }
   }
   pre {
     padding-left: 0;

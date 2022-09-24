@@ -16,8 +16,8 @@ const Card = ({ image, path, slug, title, description }: CardProps) => {
         <a className="overflow-hidden rounded-xl">
           <Image
             alt={slug}
-            width={500}
-            height={300}
+            width={600}
+            height={350}
             src={image}
             className="object-cover object-top transition-all duration-300 hover:scale-105"
           />

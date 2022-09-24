@@ -12,7 +12,7 @@ interface ProjectImageSliderProps {
 const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps) => {
   const [indexActive, setIndexActive] = useState(0);
   const [imageActiveState, setImageActiveState] = useState({
-    backgroundImage: `url(${sanityImgUrl(images[indexActive]).width(1200).url()})`,
+    backgroundImage: `url(${sanityImgUrl(images[indexActive]).width(1300).url()})`,
     backgroundPosition: "0% 0%",
     backgroundSize: "cover",
   });
