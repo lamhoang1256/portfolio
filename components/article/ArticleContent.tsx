@@ -1,6 +1,6 @@
 import { YouTube } from "components/youtube";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import Image from "next/image";
+import { Image } from "components/image";
 import "highlight.js/styles/base16/dracula.css";
 import { LinkTargetBlank } from "components/link";
 

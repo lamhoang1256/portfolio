@@ -4,7 +4,7 @@ import { LayoutHome } from "layouts";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
-import Image from "next/image";
+import { Image } from "components/image";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
@@ -33,7 +33,6 @@ const PostDetailsPage = ({ post, mdxSource }: PostDetailsPageProps) => {
                 alt={post.slug.current}
                 width={1200}
                 height={675}
-                objectFit="cover"
                 className="object-top"
               />
             </div>

@@ -1,7 +1,7 @@
 import { Card } from "components/card";
+import { WrapLink } from "components/link";
 import { Heading } from "components/text";
 import { PATH } from "constants/path";
-import Link from "next/link";
 import { IProject } from "types/project";
 import { sanityImgUrl } from "utils/sanityImgUrl";
 
@@ -35,11 +35,11 @@ const HomeFeatured = ({ projects }: HomeFeaturedProps) => {
             />
           ))}
         </div>
-        <Link href={PATH.project}>
+        <WrapLink href={PATH.project}>
           <button className="block py-3 mx-auto mt-6 rounded-lg bg-green82 px-7 bg-linearPurple">
             View more
           </button>
-        </Link>
+        </WrapLink>
       </div>
     </section>
   );

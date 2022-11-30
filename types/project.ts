@@ -23,7 +23,7 @@ export interface IProject {
     _ref: string;
     _type: string;
   }[];
-  images: IProjectImages[];
+  images: string[];
   mainImage: {
     _type: string;
     asset: {

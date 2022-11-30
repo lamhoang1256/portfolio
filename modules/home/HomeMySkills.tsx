@@ -1,7 +1,6 @@
+import { Image } from "components/image";
 import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
-import Image from "next/image";
-import Link from "next/link";
 import { ISkill } from "types";
 import { sanityImgUrl } from "utils/sanityImgUrl";
 

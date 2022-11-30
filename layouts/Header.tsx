@@ -1,5 +1,5 @@
+import { WrapLink } from "components/link";
 import { PATH } from "constants/path";
-import Link from "next/link";
 const links = [
   {
     path: PATH.home,
@@ -27,9 +27,7 @@ const Header = () => {
           <ul className="flex items-center justify-center gap-10 font-medium">
             {links.map((link) => (
               <li key={link.path}>
-                <Link href={link.path}>
-                  <a>{link.display}</a>
-                </Link>
+                <WrapLink href={link.path}>{link.display}</WrapLink>
               </li>
             ))}
           </ul>

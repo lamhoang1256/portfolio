@@ -6,7 +6,7 @@ import { Heading } from "components/text";
 import { TextArea } from "components/textarea";
 import { contacts } from "constants/data";
 import emailjs from "emailjs-com";
-import Image from "next/image";
+import { Image } from "components/image";
 import { FormEvent, useRef, useState } from "react";
 import classNames from "utils/className";
 

@@ -1,6 +1,6 @@
 import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
-import Image from "next/image";
+import { Image } from "components/image";
 
 const HomeAboutMe = () => {
   return (

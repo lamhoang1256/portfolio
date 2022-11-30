@@ -1,7 +1,7 @@
 import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
 import { extensions } from "constants/data";
-import Image from "next/image";
+import { Image } from "components/image";
 
 const HomeVSExtensions = () => {
   return (
