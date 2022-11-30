@@ -15,7 +15,7 @@ const HomeCanvas = () => {
     let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
     const mouse = {
       x: -1000,
-      y: -1000,
+      y: -1000
     };
     canvas.addEventListener("mousemove", (e) => {
       mouse.x = e.clientX;

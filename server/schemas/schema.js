@@ -8,5 +8,5 @@ import skill from "./skill";
 
 export default createSchema({
   name: "default",
-  types: schemaTypes.concat([post, author, project, skill, blockContent]),
+  types: schemaTypes.concat([post, author, project, skill, blockContent])
 });

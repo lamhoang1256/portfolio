@@ -44,8 +44,8 @@ export async function getStaticProps() {
   const posts = await sanityClient.fetch(`*[_type == "post"]`);
   return {
     props: {
-      posts,
-    },
+      posts
+    }
   };
 }
 

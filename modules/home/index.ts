@@ -13,5 +13,5 @@ export {
   HomeIntro,
   HomeMySkills,
   HomeVSExtensions,
-  HomeContact,
+  HomeContact
 };

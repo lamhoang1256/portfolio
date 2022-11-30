@@ -7,9 +7,9 @@ const nextConfig = {
       "cdn.jsdelivr.net",
       "user-images.githubusercontent.com",
       "cdn.sanity.io",
-      "cdn-icons-png.flaticon.com",
-    ],
-  },
+      "cdn-icons-png.flaticon.com"
+    ]
+  }
 };
 
 module.exports = nextConfig;

@@ -62,19 +62,19 @@ export async function getStaticProps(context: any) {
         [
           rehypeAutolinkHeadings,
           {
-            properties: { className: ["anchor"] },
+            properties: { className: ["anchor"] }
           },
-          { behaviour: "wrap" },
+          { behaviour: "wrap" }
         ],
-        rehypeHighlight,
-      ],
-    },
+        rehypeHighlight
+      ]
+    }
   });
   return {
     props: {
       post,
-      mdxSource,
-    },
+      mdxSource
+    }
   };
 }
 
@@ -84,7 +84,7 @@ export async function getStaticPaths() {
   );
   return {
     paths: paths.map((slug: string) => ({ params: { slug } })),
-    fallback: false,
+    fallback: false
   };
 }
 

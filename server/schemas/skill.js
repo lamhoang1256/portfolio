@@ -6,20 +6,20 @@ export default {
     {
       name: "name",
       title: "Name",
-      type: "string",
+      type: "string"
     },
     {
       name: "image",
       title: "Image",
       type: "image",
       options: {
-        hotspot: true,
-      },
+        hotspot: true
+      }
     },
     {
       name: "url",
       title: "Url",
-      type: "text",
-    },
-  ],
+      type: "text"
+    }
+  ]
 };

@@ -3,20 +3,20 @@ import Link from "next/link";
 const links = [
   {
     path: PATH.home,
-    display: "Home",
+    display: "Home"
   },
   {
     path: PATH.project,
-    display: "Projects",
+    display: "Projects"
   },
   {
     path: PATH.post,
-    display: "Posts",
+    display: "Posts"
   },
   {
     path: PATH.cv,
-    display: "CV",
-  },
+    display: "CV"
+  }
 ];
 
 const Header = () => {

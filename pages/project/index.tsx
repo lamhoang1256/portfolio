@@ -50,8 +50,8 @@ export async function getStaticProps() {
   const projects = await sanityClient.fetch(`*[_type == "project"]`);
   return {
     props: {
-      projects,
-    },
+      projects
+    }
   };
 }
 

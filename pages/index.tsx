@@ -6,7 +6,7 @@ import {
   HomeFeatured,
   HomeIntro,
   HomeMySkills,
-  HomeVSExtensions,
+  HomeVSExtensions
 } from "modules/home";
 import Head from "next/head";
 import { ISkill } from "types";
@@ -43,8 +43,8 @@ export async function getStaticProps() {
   return {
     props: {
       projects,
-      skills,
-    },
+      skills
+    }
   };
 }
 

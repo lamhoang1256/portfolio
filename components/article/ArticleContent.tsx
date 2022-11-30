@@ -17,7 +17,7 @@ const ArticleContent = ({ mdxSource }: ArticleContentProps) => {
           YouTube,
           Image,
           a: (props: any) =>
-            props.href.startsWith("#") ? <a {...props} /> : <LinkTargetBlank {...props} />,
+            props.href.startsWith("#") ? <a {...props} /> : <LinkTargetBlank {...props} />
         }}
       />
     </article>
