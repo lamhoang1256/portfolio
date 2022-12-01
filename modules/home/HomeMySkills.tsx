@@ -26,10 +26,11 @@ const HomeMySkills = ({ skills }: HomeMySkillsProps) => {
                 className="flex flex-col text-center transition-all duration-200 hover:scale-105"
               >
                 <Image
-                  alt={skill.name}
-                  src={sanityImgUrl(skill.image).url()}
                   width={66}
                   height={66}
+                  alt={skill.name}
+                  src={sanityImgUrl(skill.image).url()}
+                  className="mx-auto"
                 />
                 <span>{skill.name}</span>
               </LinkTargetBlank>
