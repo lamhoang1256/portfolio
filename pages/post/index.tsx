@@ -1,8 +1,8 @@
 import { Card } from "components/card";
+import { Meta } from "components/meta";
 import { Heading } from "components/text";
 import { PATH } from "constants/path";
 import { LayoutHome } from "layouts";
-import Head from "next/head";
 import { IPost } from "types/post";
 import sanityClient from "utils/sanityClient";
 import { sanityImgUrl } from "utils/sanityImgUrl";
@@ -14,9 +14,7 @@ interface PostPageProps {
 const PostPage = ({ posts }: PostPageProps) => {
   return (
     <>
-      <Head>
-        <title>Posts</title>
-      </Head>
+      <Meta title="Posts" />
       <LayoutHome>
         <section className="mt-20 layout-container">
           <div className="text-center">

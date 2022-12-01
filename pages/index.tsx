@@ -8,7 +8,6 @@ import {
   HomeMySkills,
   HomeVSExtensions
 } from "modules/home";
-import Head from "next/head";
 import { ISkill } from "types";
 import { IProject } from "types/project";
 import sanityClient from "utils/sanityClient";
@@ -20,20 +19,15 @@ interface HomePageProps {
 
 const HomePage = ({ projects, skills }: HomePageProps) => {
   return (
-    <>
-      <Head>
-        <title>Nguyen Hoang Lam</title>
-      </Head>
-      <LayoutHome className="-mt-16">
-        <HomeCanvas />
-        <HomeIntro />
-        <HomeAboutMe />
-        <HomeMySkills skills={skills} />
-        <HomeFeatured projects={projects} />
-        <HomeVSExtensions />
-        <HomeContact />
-      </LayoutHome>
-    </>
+    <LayoutHome className="-mt-[88px]">
+      <HomeCanvas />
+      <HomeIntro />
+      <HomeAboutMe />
+      <HomeMySkills skills={skills} />
+      <HomeFeatured projects={projects} />
+      <HomeVSExtensions />
+      <HomeContact />
+    </LayoutHome>
   );
 };
 

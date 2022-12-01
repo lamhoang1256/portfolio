@@ -1,15 +1,16 @@
 import { ArticleContent } from "components/article";
+import { Meta } from "components/meta";
 import { Heading } from "components/text";
 import { LayoutHome } from "layouts";
 import { ProjectImageSlider } from "modules/project";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import Head from "next/head";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import { IProject } from "types/project";
 import sanityClient from "utils/sanityClient";
+import { sanityImgUrlMain } from "utils/sanityImgUrl";
 
 interface ProjectDetailsPageProps {
   project: IProject;
@@ -19,9 +20,11 @@ interface ProjectDetailsPageProps {
 const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => {
   return (
     <>
-      <Head>
-        <title>{project.title}</title>
-      </Head>
+      <Meta
+        title={project.title}
+        image={sanityImgUrlMain(project.mainImage)}
+        description={project.description}
+      />
       <LayoutHome>
         <div className="layout-container">
           <section className="max-w-[900px] mt-4 mx-auto">

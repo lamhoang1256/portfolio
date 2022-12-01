@@ -1,4 +1,5 @@
 import { Card } from "components/card";
+import { Meta } from "components/meta";
 import { Heading } from "components/text";
 import { PATH } from "constants/path";
 import { LayoutHome } from "layouts";
@@ -14,9 +15,7 @@ interface ProjectsPageProps {
 const ProjectsPage = ({ projects }: ProjectsPageProps) => {
   return (
     <>
-      <Head>
-        <title>Projects</title>
-      </Head>
+      <Meta title="Projects" />
       <LayoutHome>
         <section className="mt-20 layout-container">
           <div className="text-center">
