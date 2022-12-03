@@ -2,9 +2,9 @@
   "name": "portfolio",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "This project at (https://github.com/lamhoang1256/portfolio)",
   "main": "package.json",
-  "author": "Nguyễn Lâm <lamhoang1256@gmail.com>",
+  "author": "Nguyen Lam <lamhoang1256@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
