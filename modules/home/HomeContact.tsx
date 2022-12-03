@@ -8,7 +8,7 @@ import { contacts } from "constants/data";
 import emailjs from "emailjs-com";
 import { Image } from "components/image";
 import { FormEvent, useRef, useState } from "react";
-import classNames from "utils/className";
+import classNames from "utils/classNames";
 
 const HomeContact = () => {
   const formRef = useRef<HTMLFormElement>(null);

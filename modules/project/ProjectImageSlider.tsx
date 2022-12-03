@@ -1,5 +1,5 @@
 import { MouseEvent, useState } from "react";
-import classNames from "utils/className";
+import classNames from "utils/classNames";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface ProjectImageSliderProps {

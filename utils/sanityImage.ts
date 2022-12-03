@@ -1,18 +1,18 @@
 import imageUrlBuilder from "@sanity/image-url";
-import { IProjectMainImage } from "types/project";
+import { ISanityImage } from "types/project";
 import sanityClient from "./sanityClient";
 
-export function sanityImgUrl(source: any) {
+export const sanityImgUrl = (source: ISanityImage) => {
   return imageUrlBuilder(sanityClient).image(source);
-}
+};
 
-export function sanityImgUrlMain(mainImage: IProjectMainImage) {
+export const sanityImgCard = (source: ISanityImage) => {
   return imageUrlBuilder(sanityClient)
-    .image(mainImage)
+    .image(source)
     .width(600)
     .height(350)
-    .focalPoint(0, 0)
+    .focalPoint(0.5, 0)
     .crop("focalpoint")
     .fit("crop")
     .url();
-}
+};

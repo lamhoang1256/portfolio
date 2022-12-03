@@ -1,5 +1,5 @@
 import { IframeHTMLAttributes } from "react";
-import classNames from "utils/className";
+import classNames from "utils/classNames";
 
 interface YoutubeProps extends IframeHTMLAttributes<HTMLIFrameElement> {}
 

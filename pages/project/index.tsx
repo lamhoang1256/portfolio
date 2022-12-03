@@ -6,7 +6,7 @@ import { LayoutHome } from "layouts";
 import { GetStaticProps } from "next";
 import { IProject } from "types/project";
 import sanityClient from "utils/sanityClient";
-import { sanityImgUrlMain } from "utils/sanityImgUrl";
+import { sanityImgUrl, sanityImgCard } from "utils/sanityImage";
 
 interface ProjectsPageProps {
   projects: IProject[];
@@ -27,7 +27,7 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
               title={project.title}
               slug={project.slug.current}
               path={`${PATH.project}/${project.slug.current}`}
-              image={sanityImgUrlMain(project.mainImage)}
+              image={sanityImgCard(project.mainImage)}
               description={project.description}
             />
           ))}

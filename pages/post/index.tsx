@@ -6,7 +6,7 @@ import { LayoutHome } from "layouts";
 import { GetStaticProps } from "next";
 import { IPost } from "types/post";
 import sanityClient from "utils/sanityClient";
-import { sanityImgUrl } from "utils/sanityImgUrl";
+import { sanityImgUrl } from "utils/sanityImage";
 
 interface PostPageProps {
   posts: IPost[];

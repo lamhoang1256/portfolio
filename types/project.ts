@@ -7,7 +7,7 @@ export interface IProjectImages {
   };
 }
 
-export interface IProjectMainImage {
+export interface ISanityImage {
   _type: string;
   asset: {
     _ref: string;
@@ -31,7 +31,7 @@ export interface IProject {
     _type: string;
   }[];
   images: string[];
-  mainImage: IProjectMainImage;
+  mainImage: ISanityImage;
   slug: {
     _type: string;
     current: string;

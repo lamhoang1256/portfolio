@@ -2,7 +2,7 @@ import { Image } from "components/image";
 import { LinkTargetBlank } from "components/link";
 import { Heading } from "components/text";
 import { ISkill } from "types";
-import { sanityImgUrl } from "utils/sanityImgUrl";
+import { sanityImgUrl } from "utils/sanityImage";
 
 interface HomeMySkillsProps {
   skills: ISkill[];

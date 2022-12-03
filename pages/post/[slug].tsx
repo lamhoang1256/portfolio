@@ -8,7 +8,7 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { IPost } from "types/post";
 import { getMdxSource } from "utils/helper";
 import sanityClient from "utils/sanityClient";
-import { sanityImgUrl, sanityImgUrlMain } from "utils/sanityImgUrl";
+import { sanityImgUrl, sanityImgCard } from "utils/sanityImage";
 
 interface PostDetailsPageProps {
   post: IPost;
@@ -20,7 +20,7 @@ const PostDetailsPage = ({ post, mdxSource }: PostDetailsPageProps) => {
     <LayoutHome>
       <Meta
         title={post.title}
-        image={sanityImgUrlMain(post.mainImage)}
+        image={sanityImgCard(post.mainImage)}
         description={post.description}
       />
       <div className="layout-container">

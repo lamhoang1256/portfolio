@@ -8,7 +8,7 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { IProject } from "types/project";
 import { getMdxSource } from "utils/helper";
 import sanityClient from "utils/sanityClient";
-import { sanityImgUrlMain } from "utils/sanityImgUrl";
+import { sanityImgCard } from "utils/sanityImage";
 
 interface ProjectDetailsPageProps {
   project: IProject;
@@ -20,7 +20,7 @@ const ProjectDetailsPage = ({ project, mdxSource }: ProjectDetailsPageProps) => 
     <LayoutHome>
       <Meta
         title={project.title}
-        image={sanityImgUrlMain(project.mainImage)}
+        image={sanityImgCard(project.mainImage)}
         description={project.description}
       />
       <div className="layout-container">

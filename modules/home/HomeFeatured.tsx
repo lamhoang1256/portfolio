@@ -3,7 +3,7 @@ import { WrapLink } from "components/link";
 import { Heading } from "components/text";
 import { PATH } from "constants/path";
 import { IProject } from "types/project";
-import { sanityImgUrl } from "utils/sanityImgUrl";
+import { sanityImgCard } from "utils/sanityImage";
 
 interface HomeFeaturedProps {
   projects: IProject[];
@@ -24,13 +24,7 @@ const HomeFeatured = ({ projects }: HomeFeaturedProps) => {
               title={project.title}
               slug={project.slug.current}
               path={`${PATH.project}/${project.slug.current}`}
-              image={sanityImgUrl(project.mainImage)
-                .width(600)
-                .height(350)
-                .focalPoint(0, 0)
-                .crop("focalpoint")
-                .fit("crop")
-                .url()}
+              image={sanityImgCard(project.mainImage)}
               description={project.description}
             />
           ))}
