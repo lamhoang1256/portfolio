@@ -12,12 +12,13 @@ const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps)
   const [imageActiveState, setImageActiveState] = useState({
     backgroundImage: `url(${images[indexActive]})`,
     backgroundPosition: "0% 0%",
-    backgroundSize: "cover"
+    backgroundSize: "100%"
   });
   const handleChooseActive = (index: number) => {
     setIndexActive(index);
     setImageActiveState({
-      ...imageActiveState,
+      backgroundPosition: "0% 0%",
+      backgroundSize: "100%",
       backgroundImage: `url(${images[index]})`
     });
   };
@@ -35,13 +36,13 @@ const ProjectImageSlider = ({ images, className = "" }: ProjectImageSliderProps)
     setImageActiveState({
       ...imageActiveState,
       backgroundPosition: "0% 0%",
-      backgroundSize: "cover"
+      backgroundSize: "100%"
     });
   };
   return (
     <div className={className}>
       <div
-        className="object-top w-full overflow-hidden bg-no-repeat border border-gray-600 rounded-lg aspect-video image-reset bg-linearPurple2 cursor-zoom-in"
+        className="object-top w-full overflow-hidden bg-no-repeat border border-gray-600 rounded-lg aspect-video image-reset cursor-zoom-in"
         style={imageActiveState}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
