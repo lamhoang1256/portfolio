@@ -11,7 +11,7 @@ const server = "https://nguyenhoanglam.vercel.app";
 const Meta = ({
   title = "Nguyen Hoang Lam - Front End Developer",
   description = "Nguyen Hoang Lam's Portfolio",
-  image = `https://images.unsplash.com/photo-1669593926202-5812c913864d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80`
+  image = `/seo-image.png`
 }: MetaProps) => {
   const router = useRouter();
   return (
@@ -22,7 +22,13 @@ const Meta = ({
       <meta name="robots" content="index,follow" />
       <meta name="description" content={description} key="description" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" key="viewport" />
-      <link rel="icon" href="/favicon.png" key="favicon" />
+      <meta name="copyright" content="lamhoang1256" key="copyright" />
+      <meta
+        name="keywords"
+        content="lamhoang1256, nguyenhoanglam, lamhoang1256.dev"
+        key="keywords"
+      />
+      <link rel="icon" href="/brand.png" key="favicon" />
       <link rel="canonical" href={server} key="canonical" />
       {/* Google / Search Engine Tags */}
       <meta itemProp="name" content={title} key="gg-name" />
