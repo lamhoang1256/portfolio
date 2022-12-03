@@ -1,16 +1,14 @@
 import { ArticleContent } from "components/article";
+import { Image } from "components/image";
+import { Meta } from "components/meta";
 import { Heading } from "components/text";
 import { LayoutHome } from "layouts";
+import { GetStaticPaths, GetStaticPropsContext } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
-import Head from "next/head";
-import { Image } from "components/image";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeHighlight from "rehype-highlight";
-import rehypeSlug from "rehype-slug";
 import { IPost } from "types/post";
+import { getMdxSource } from "utils/helper";
 import sanityClient from "utils/sanityClient";
-import { sanityImgUrl } from "utils/sanityImgUrl";
+import { sanityImgUrl, sanityImgUrlMain } from "utils/sanityImgUrl";
 
 interface PostDetailsPageProps {
   post: IPost;
@@ -19,72 +17,51 @@ interface PostDetailsPageProps {
 
 const PostDetailsPage = ({ post, mdxSource }: PostDetailsPageProps) => {
   return (
-    <>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
-      <LayoutHome>
-        <div className="layout-container">
-          <section className="max-w-[900px] mt-4 mx-auto">
-            <Heading>{post.title}</Heading>
-            <div className="w-full my-4 overflow-hidden border border-gray-600 rounded-lg aspect-video">
-              <Image
-                src={sanityImgUrl(post.mainImage).width(1200).url()}
-                alt={post.slug.current}
-                width={1200}
-                height={675}
-                className="object-top"
-              />
-            </div>
-            <p className="text-lg">{post.description}</p>
-            <ArticleContent mdxSource={mdxSource} />
-          </section>
-        </div>
-      </LayoutHome>
-    </>
+    <LayoutHome>
+      <Meta
+        title={post.title}
+        image={sanityImgUrlMain(post.mainImage)}
+        description={post.description}
+      />
+      <div className="layout-container">
+        <section className="max-w-[900px] mt-4 mx-auto">
+          <Heading>{post.title}</Heading>
+          <div className="w-full my-4 overflow-hidden border border-gray-600 rounded-lg aspect-video">
+            <Image
+              src={sanityImgUrl(post.mainImage).width(1200).url()}
+              alt={post.slug.current}
+              width={1200}
+              height={675}
+              className="object-top"
+            />
+          </div>
+          <p className="text-lg">{post.description}</p>
+          <ArticleContent mdxSource={mdxSource} />
+        </section>
+      </div>
+    </LayoutHome>
   );
 };
 
-export async function getStaticProps(context: any) {
-  const { slug = "" } = context.params;
-  const post = await sanityClient.fetch(
-    `
-    *[_type == "post" && slug.current == $slug][0]
-    `,
-    { slug }
-  );
-  console.log("post: ", post);
-  const mdxSource = await serialize(post.content, {
-    mdxOptions: {
-      rehypePlugins: [
-        rehypeSlug,
-        [
-          rehypeAutolinkHeadings,
-          {
-            properties: { className: ["anchor"] }
-          },
-          { behaviour: "wrap" }
-        ],
-        rehypeHighlight
-      ]
-    }
-  });
-  return {
-    props: {
-      post,
-      mdxSource
-    }
-  };
-}
-
-export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(
-    `*[_type == "post" && defined(slug.current)][].slug.current`
-  );
+export const getStaticPaths: GetStaticPaths = async () => {
+  const queryRef = `*[_type == "post" && defined(slug.current)][].slug.current`;
+  const paths = await sanityClient.fetch(queryRef);
   return {
     paths: paths.map((slug: string) => ({ params: { slug } })),
     fallback: false
   };
-}
+};
+
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
+  const slug = params?.slug;
+  try {
+    const queryRef = `*[_type == "post" && slug.current == $slug][0]`;
+    const post = await sanityClient.fetch(queryRef, { slug });
+    const mdxSource = await getMdxSource(post.content);
+    return { props: { post, mdxSource } };
+  } catch (error) {
+    return { props: {}, revalidate: 86400, notFound: true };
+  }
+};
 
 export default PostDetailsPage;

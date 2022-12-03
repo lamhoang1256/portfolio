@@ -8,6 +8,7 @@ import {
   HomeMySkills,
   HomeVSExtensions
 } from "modules/home";
+import { GetStaticProps } from "next";
 import { ISkill } from "types";
 import { IProject } from "types/project";
 import sanityClient from "utils/sanityClient";
@@ -31,15 +32,10 @@ const HomePage = ({ projects, skills }: HomePageProps) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const projects = await sanityClient.fetch(`*[_type == "project" && featured == true]`);
   const skills = await sanityClient.fetch(`*[_type == "skill"]`);
-  return {
-    props: {
-      projects,
-      skills
-    }
-  };
-}
+  return { props: { projects, skills } };
+};
 
 export default HomePage;
