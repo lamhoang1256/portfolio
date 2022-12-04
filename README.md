@@ -1,10 +1,10 @@
 # Portfolio
 
-My profile
+A simple portfolio website to showcase your work and projects.
 
 ## Overview
 
-- Official website: https://net-film.vercel.app
+- Official website: https://nguyenhoanglam.vercel.app
 - Author: Nguyễn Hoàng Lâm ( [@lamhoang1256](https://github.com/lamhoang1256) )
 
 ## Preview
@@ -17,8 +17,8 @@ My profile
 - Tailwindcss
 - Sanity (backend)
 - Framer-motion (Animation Canvas)
-- Next-mdx-remote ,rehype-autolink-headings, rehype-highlight,rehype-slug (Support convert Doc Readme to HTML)
-- Other: emailjs-com,react-lazy-load-image-component
+- Next-mdx-remote ,rehype-autolink-headings, rehype-highlight, rehype-slug (Support convert doc readme to HTML)
+- Other: emailjs-com, react-lazy-load-image-component, ...
 
 ## Environment Variables
 
@@ -60,8 +60,5 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY =
 
  </p>
 </details>
-
-
-
 
 ### 👉 If you like this project, give it a star ✨ and share 👨🏻‍💻 it to your friends 👈
