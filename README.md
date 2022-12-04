@@ -43,5 +43,25 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY =
  </p>
 </details>
 
+<details>
+ <summary>Projects page</summary>
+ <p>
+
+![projects](https://user-images.githubusercontent.com/61537853/205473735-ba2d9e9c-9863-428d-b284-f1e9ea42b310.png)
+
+ </p>
+</details>
+
+<details>
+ <summary>Project details page</summary>
+ <p>
+
+![project-details](https://user-images.githubusercontent.com/61537853/205473733-d41f0df6-4952-4091-804d-21353d17c944.png)
+
+ </p>
+</details>
+
+
+
 
 ### 👉 If you like this project, give it a star ✨ and share 👨🏻‍💻 it to your friends 👈
