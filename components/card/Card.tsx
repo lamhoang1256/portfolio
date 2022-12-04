@@ -18,14 +18,14 @@ const Card = ({ image, path, slug, title, description }: CardProps) => {
           width={600}
           height={350}
           src={image}
-          className="object-cover object-top transition-all duration-300 hover:scale-105"
+          className="object-cover object-top h-[220px] transition-all duration-300 hover:scale-105"
         />
       </WrapLink>
       <div className="p-4 pt-3">
-        <WrapLink href={path} className="text-lg font-bold text-green82">
+        <WrapLink href={path} className="text-lg font-bold line-clamp-2 text-green82">
           {title}
         </WrapLink>
-        <p className="mt-2">{description}</p>
+        <p className="mt-2 line-clamp-2">{description}</p>
       </div>
     </div>
   );

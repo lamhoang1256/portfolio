@@ -43,10 +43,29 @@
       border-radius: 4px;
     }
   }
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+  }
   pre {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
     margin: 0 !important;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  pre code {
+    padding: 20px !important;
+    font-size: 16px;
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+      margin-top: 12px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #5a6072;
+      border-radius: 0.25rem;
+      border: 0.125rem solid transparent;
+    }
   }
   a {
     color: #5773ff;
