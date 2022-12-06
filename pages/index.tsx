@@ -35,7 +35,7 @@ const HomePage = ({ projects, skills }: HomePageProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   const projects = await sanityClient.fetch(`*[_type == "project" && featured == true]`);
   const skills = await sanityClient.fetch(`*[_type == "skill"]`);
-  return { props: { projects, skills } };
+  return { props: { projects, skills }, revalidate: 86400 };
 };
 
 export default HomePage;

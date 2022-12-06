@@ -58,7 +58,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     const queryRef = `*[_type == "post" && slug.current == $slug][0]`;
     const post = await sanityClient.fetch(queryRef, { slug });
     const mdxSource = await getMdxSource(post.content);
-    return { props: { post, mdxSource } };
+    return { props: { post, mdxSource }, revalidate: 86400 };
   } catch (error) {
     return { props: {}, revalidate: 86400, notFound: true };
   }

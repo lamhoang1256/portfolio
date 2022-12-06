@@ -40,7 +40,7 @@ const PostPage = ({ posts }: PostPageProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const posts = await sanityClient.fetch(`*[_type == "post"]`);
-    return { props: { posts } };
+    return { props: { posts }, revalidate: 86400 };
   } catch (error) {
     return { props: { posts: [] }, revalidate: 86400 };
   }

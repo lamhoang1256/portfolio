@@ -40,7 +40,7 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const projects = await sanityClient.fetch(`*[_type == "project"]`);
-    return { props: { projects } };
+    return { props: { projects }, revalidate: 86400 };
   } catch (error) {
     return { props: { projects: [] }, revalidate: 86400 };
   }
