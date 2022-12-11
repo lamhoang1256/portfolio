@@ -27,7 +27,7 @@ const Meta = ({
         content="lamhoang1256, nguyenhoanglam, lamhoang1256.dev"
         key="keywords"
       />
-      <link rel="icon" href="/brand.png" key="favicon" />
+      <link rel="icon" href="/favicon.ico" type="image/ico" />
       <link rel="canonical" href="/" key="canonical" />
       {/* Google / Search Engine Tags */}
       <meta itemProp="name" content={title} key="gg-name" />
