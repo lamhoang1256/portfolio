@@ -7,7 +7,6 @@ interface MetaProps {
   image?: string;
 }
 
-const server = "https://nguyenhoanglam.vercel.app";
 const Meta = ({
   title = "Nguyen Hoang Lam - Front End Developer",
   description = "Nguyen Hoang Lam's Portfolio",
@@ -29,7 +28,7 @@ const Meta = ({
         key="keywords"
       />
       <link rel="icon" href="/brand.png" key="favicon" />
-      <link rel="canonical" href={server} key="canonical" />
+      <link rel="canonical" href="/" key="canonical" />
       {/* Google / Search Engine Tags */}
       <meta itemProp="name" content={title} key="gg-name" />
       <meta itemProp="description" content={description} key="gg-description" />
@@ -41,10 +40,10 @@ const Meta = ({
       <meta property="og:image" content={image} key="og-image" />
       <meta property="og:image:alt" content={description} key="og-image-alt" />
       <meta property="og:locale" content="vi_VN" key="og-locale" />
-      <meta property="og:url" content={`${server}${router.asPath}`} key="og-url" />
+      <meta property="og:url" content={`${router.asPath}`} key="og-url" />
       {/* Twitter Meta Tags */}
       <meta property="twitter:card" content="summary_large_image" key="twitter-card" />
-      <meta property="twitter:url" content={`${server}${router.asPath}`} key="twitter-url" />
+      <meta property="twitter:url" content={`${router.asPath}`} key="twitter-url" />
       <meta property="twitter:title" content={title} key="twitter-title" />
       <meta property="twitter:description" content={description} key="twitter-desc" />
       <meta property="twitter:image" content={image} key="twitter-image" />

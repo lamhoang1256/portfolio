@@ -1,6 +1,7 @@
-import { LinkTargetBlank } from "components/link";
+import { LinkTargetBlank, WrapLink } from "components/link";
 import { Heading } from "components/text";
 import { Image } from "components/image";
+import { PATH } from "constants/path";
 
 const HomeAboutMe = () => {
   return (
@@ -34,11 +35,13 @@ const HomeAboutMe = () => {
             </div>
           </div>
           <div className="flex mt-6 gap-x-3">
-            <button className="py-3 rounded-lg px-7 bg-linearOrangee">Download CV</button>
+            <button className="py-3 rounded-lg px-7 bg-linearOrangee">
+              <LinkTargetBlank href={PATH.resume}>Download CV</LinkTargetBlank>
+            </button>
             <button className="py-3 rounded-lg px-7 bg-linearPurple">Contact Me</button>
           </div>
         </div>
-        <div className="flex justify-center flex-1 maxsm:max-w-[250px]">
+        <div className="flex justify-center relative flex-1 maxsm:max-w-[250px]">
           <Image
             alt="avatar"
             width={350}

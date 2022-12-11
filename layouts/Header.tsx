@@ -1,4 +1,4 @@
-import { WrapLink } from "components/link";
+import { LinkTargetBlank, WrapLink } from "components/link";
 import { PATH } from "constants/path";
 const links = [
   {
@@ -14,8 +14,8 @@ const links = [
     display: "Posts"
   },
   {
-    path: PATH.cv,
-    display: "CV"
+    path: PATH.resume,
+    display: "Resume"
   }
 ];
 
@@ -24,12 +24,21 @@ const Header = () => {
     <header className="absolute top-0 left-0 right-0 z-10">
       <div className="layout-container">
         <nav className="py-8">
-          <ul className="flex items-center justify-center gap-10 font-medium">
-            {links.map((link) => (
-              <li key={link.path}>
-                <WrapLink href={link.path}>{link.display}</WrapLink>
-              </li>
-            ))}
+          <ul className="flex items-center justify-center gap-8 font-medium lg:gap-10">
+            {links.map((link) => {
+              if (link.path === PATH.resume) {
+                return (
+                  <li key={link.path}>
+                    <LinkTargetBlank href={link.path}>{link.display}</LinkTargetBlank>
+                  </li>
+                );
+              }
+              return (
+                <li key={link.path}>
+                  <WrapLink href={link.path}>{link.display}</WrapLink>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
