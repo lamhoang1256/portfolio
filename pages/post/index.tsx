@@ -1,6 +1,7 @@
 import { Card } from "components/card";
 import { Meta } from "components/meta";
 import { Heading } from "components/text";
+import { REVALIDATE_TIME, REVALIDATE_TIME_ERROR } from "constants/global";
 import { PATH } from "constants/path";
 import { LayoutHome } from "layouts";
 import { GetStaticProps } from "next";
@@ -8,11 +9,11 @@ import { IPost } from "types/post";
 import sanityClient from "utils/sanityClient";
 import { sanityImgUrl } from "utils/sanityImage";
 
-interface PostPageProps {
+interface PostsPageProps {
   posts: IPost[];
 }
 
-const PostPage = ({ posts }: PostPageProps) => {
+const PostsPage = ({ posts }: PostsPageProps) => {
   return (
     <LayoutHome>
       <Meta title="Posts" />
@@ -40,10 +41,10 @@ const PostPage = ({ posts }: PostPageProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const posts = await sanityClient.fetch(`*[_type == "post"]`);
-    return { props: { posts }, revalidate: 86400 };
+    return { props: { posts }, revalidate: REVALIDATE_TIME };
   } catch (error) {
-    return { props: { posts: [] }, revalidate: 86400 };
+    return { props: { posts: [] }, revalidate: REVALIDATE_TIME_ERROR };
   }
 };
 
-export default PostPage;
+export default PostsPage;

@@ -1,12 +1,13 @@
 import { Card } from "components/card";
 import { Meta } from "components/meta";
 import { Heading } from "components/text";
+import { REVALIDATE_TIME, REVALIDATE_TIME_ERROR } from "constants/global";
 import { PATH } from "constants/path";
 import { LayoutHome } from "layouts";
 import { GetStaticProps } from "next";
 import { IProject } from "types/project";
 import sanityClient from "utils/sanityClient";
-import { sanityImgUrl, sanityImgCard } from "utils/sanityImage";
+import { sanityImgCard } from "utils/sanityImage";
 
 interface ProjectsPageProps {
   projects: IProject[];
@@ -40,9 +41,9 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const projects = await sanityClient.fetch(`*[_type == "project"]`);
-    return { props: { projects }, revalidate: 86400 };
+    return { props: { projects }, revalidate: REVALIDATE_TIME };
   } catch (error) {
-    return { props: { projects: [] }, revalidate: 86400 };
+    return { props: { projects: [] }, revalidate: REVALIDATE_TIME_ERROR };
   }
 };
 

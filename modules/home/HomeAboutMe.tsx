@@ -1,6 +1,6 @@
-import { LinkTargetBlank, WrapLink } from "components/link";
-import { Heading } from "components/text";
 import { Image } from "components/image";
+import { LinkTargetBlank } from "components/link";
+import { Heading } from "components/text";
 import { PATH } from "constants/path";
 
 const HomeAboutMe = () => {
@@ -43,11 +43,11 @@ const HomeAboutMe = () => {
         </div>
         <div className="flex justify-center relative flex-1 maxsm:max-w-[250px]">
           <Image
-            alt="avatar"
             width={350}
             height={350}
             src="/avatar.png"
-            className="rounded-lg aspect-square"
+            alt="Nguyen Hoang Lam's avatar"
+            className="rounded-lg aspect-square bg-linearCard"
           />
         </div>
       </div>

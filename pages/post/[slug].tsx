@@ -2,6 +2,7 @@ import { ArticleContent } from "components/article";
 import { Image } from "components/image";
 import { Meta } from "components/meta";
 import { Heading } from "components/text";
+import { REVALIDATE_TIME, REVALIDATE_TIME_ERROR } from "constants/global";
 import { LayoutHome } from "layouts";
 import { GetStaticPaths, GetStaticPropsContext } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -28,11 +29,11 @@ const PostDetailsPage = ({ post, mdxSource }: PostDetailsPageProps) => {
           <Heading>{post.title}</Heading>
           <div className="w-full my-4 overflow-hidden border border-gray-600 rounded-lg aspect-video">
             <Image
-              src={sanityImgUrl(post.mainImage).width(1200).url()}
-              alt={post.slug.current}
               width={1200}
               height={675}
               className="object-top"
+              alt={post.slug.current}
+              src={sanityImgUrl(post.mainImage).width(1200).height(675).url()}
             />
           </div>
           <p className="text-lg">{post.description}</p>
@@ -43,12 +44,10 @@ const PostDetailsPage = ({ post, mdxSource }: PostDetailsPageProps) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const queryRef = `*[_type == "post" && defined(slug.current)][].slug.current`;
-  const paths = await sanityClient.fetch(queryRef);
+export const getStaticPaths: GetStaticPaths = () => {
   return {
-    paths: paths.map((slug: string) => ({ params: { slug } })),
-    fallback: false
+    paths: [],
+    fallback: "blocking"
   };
 };
 
@@ -58,9 +57,9 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     const queryRef = `*[_type == "post" && slug.current == $slug][0]`;
     const post = await sanityClient.fetch(queryRef, { slug });
     const mdxSource = await getMdxSource(post.content);
-    return { props: { post, mdxSource }, revalidate: 86400 };
+    return { props: { post, mdxSource }, revalidate: REVALIDATE_TIME };
   } catch (error) {
-    return { props: {}, revalidate: 86400, notFound: true };
+    return { props: {}, revalidate: REVALIDATE_TIME_ERROR, notFound: true };
   }
 };
 

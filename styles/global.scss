@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,6 +21,13 @@
 }
 .article-content {
   ol,
+  ul {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  ol {
+    list-style: decimal;
+  }
   ul {
     list-style: disc;
   }
@@ -49,13 +55,24 @@
   }
   pre {
     padding: 0;
-    margin: 0 !important;
+    margin: 14px 0 !important;
     border-radius: 8px;
     overflow: hidden;
+  }
+  p code,
+  li code {
+    color: #d2cff6;
+    font-weight: 700;
+    font-size: 17.5px;
+    &:after,
+    &:before {
+      content: "`";
+    }
   }
   pre code {
     padding: 20px !important;
     font-size: 16px;
+    font-family: "JetBrains Mono", monospace;
     &::-webkit-scrollbar {
       width: 10px;
       height: 10px;
@@ -83,7 +100,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    background-image: linear-gradient(90deg, #b0beff, #fed9ff);
+    background-image: linear-gradient(45deg, #d66efd, #6a5af9);
     &:nth-of-type(1) {
       background-image: linear-gradient(to top left, #4dd78a, #20e3b2, #a2de6a);
     }
@@ -94,7 +111,7 @@
       background-image: linear-gradient(90deg, #ff7170 2.34%, #ffe57f 45%);
     }
     &:nth-of-type(4) {
-      background-image: linear-gradient(45deg, #d66efd, #6a5af9);
+      background-image: linear-gradient(to right, #c084fc, #ec4899);
     }
     &:nth-of-type(5) {
       background-image: linear-gradient(90deg, #4ca5ff 2.34%, #b673f8 100.78%);
@@ -105,6 +122,12 @@
     &:nth-of-type(7) {
       background-image: linear-gradient(to top left, #fce1d0, #ffadd6, #e39bf7);
     }
+    &:nth-of-type(8) {
+      background-image: linear-gradient(to right, #ec4899, #eab308);
+    }
+  }
+  p {
+    margin: 0;
   }
 }
 .image-reset > span {

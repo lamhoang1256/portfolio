@@ -1,3 +1,4 @@
+import { REVALIDATE_TIME, REVALIDATE_TIME_ERROR } from "constants/global";
 import { LayoutHome } from "layouts";
 import {
   HomeAboutMe,
@@ -33,9 +34,20 @@ const HomePage = ({ projects, skills }: HomePageProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = await sanityClient.fetch(`*[_type == "project" && featured == true]`);
-  const skills = await sanityClient.fetch(`*[_type == "skill"]`);
-  return { props: { projects, skills }, revalidate: 86400 };
+  try {
+    const projects = await sanityClient.fetch(`*[_type == "project" && featured == true]`);
+    const skills = await sanityClient.fetch(`*[_type == "skill"]`);
+    return {
+      props: { projects, skills },
+      revalidate: REVALIDATE_TIME
+    };
+  } catch (error) {
+    return {
+      props: { projects: [], skills: [] },
+      revalidate: REVALIDATE_TIME_ERROR,
+      notFound: true
+    };
+  }
 };
 
 export default HomePage;
